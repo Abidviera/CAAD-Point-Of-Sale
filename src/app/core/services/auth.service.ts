@@ -9,6 +9,7 @@ import { UserLogin } from '../models/userlogin.model';
 import { Router } from '@angular/router';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { CurrentShift } from '../models/currentShift.model';
+
 export interface AuthResponseData {
   user: any;
   jwt_bearer_token: string;

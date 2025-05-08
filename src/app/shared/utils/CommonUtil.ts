@@ -1,4 +1,4 @@
-import { AppMenuModule } from "../../core/models/menu/appMenuModule";
+
 import { appConstant } from "../constants/appConstants";
 import storageUtility from "./storageUtility";
 
@@ -77,16 +77,7 @@ export class CommonUtil {
     return input.charAt(0).toUpperCase() + input.slice(1);
   }
 
-  static getUserMenu(): AppMenuModule[] | undefined {
-    const val = storageUtility.getValue(appConstant.menuStorageKey);
-    if (val == undefined || val == null) {
-      return undefined;
-    }
-    const menus: AppMenuModule[] = JSON.parse(val) as AppMenuModule[];
-    return menus;
-  }
 
-  static setUserMenu(menus: AppMenuModule[]) {
-    storageUtility.setKey(appConstant.menuStorageKey, JSON.stringify(menus));
-  }
+
+
 }
