@@ -1,0 +1,1168 @@
+.category-ContainerHide,
+.productsPartHide {
+  display: none;
+}
+
+.category-Container {
+  display: flex;
+  min-height: 190px !important;
+  max-height: 190px !important;
+  width: 100%;
+  background-color: rgba(239, 239, 239, 1);
+  border-radius: 10px;
+  position: relative;
+}
+
+.category-section {
+  gap: 20px;
+  padding: 10px;
+  position: relative;
+  overflow: auto;
+  width: 100%;
+}
+.category-section::-webkit-scrollbar {
+  display: none;
+}
+
+.add-category-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 91px;
+  width: 91px;
+  height: 80px;
+  border: 2px dashed #3b82f6;
+  border-radius: 8px;
+  background-color: rgba(59, 130, 246, 0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.add-category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(59, 130, 246, 0.2), transparent);
+  transition: all 0.6s ease;
+}
+
+.add-category-card:hover {
+  border-color: #2563eb;
+  background-color: rgba(59, 130, 246, 0.08);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
+}
+
+.add-category-card:hover::before {
+  left: 100%;
+}
+
+.add-category-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #3b82f6;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+}
+
+.add-category-icon i {
+  font-size: 26px;
+}
+
+.add-category-card:hover .add-category-icon {
+  transform: scale(1);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  background-color: #2563eb;
+}
+
+.add-category-text {
+  font-size: 10px;
+  font-weight: 600;
+  color: #3b82f6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.add-category-card:hover .add-category-text {
+  color: #2563eb;
+}
+
+.add-category-card:active {
+  transform: scale(0.95);
+}
+
+.child-categorysection {
+  padding-left: 10px;
+  padding-right: 10px;
+
+  .child-category-container {
+    margin-top: 8px;
+    background-color: #f8f9fa00;
+    border-radius: 12px;
+    padding: 6px;
+    padding-left: 15px;
+    border-left: 6px solid #007bff;
+    // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .child-category-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 123, 255, 0.05) 0%,
+      rgba(0, 123, 255, 0.02) 100%
+    );
+    opacity: 0.5;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .child-category-container .CategoryWithChild {
+    position: relative;
+    z-index: 2;
+  }
+
+  .child-category-card {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 84px;
+    height: 73px;
+    text-align: center;
+    border: 1px solid #e1e6eb;
+    border-radius: 4.5px;
+    padding: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(41, 112, 255, 0.201);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: auto;
+  }
+  .child-category-card::-webkit-scrollbar {
+    display: none;
+  }
+
+  .child-category-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 123, 255, 0.05) 0%,
+      transparent 50%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+  }
+
+  .child-category-card:hover::before {
+    opacity: 1;
+  }
+
+  .child-category-card img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 6px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+  }
+
+  .child-category-card h5 {
+    font-size: 10px;
+    margin: 0;
+    font-weight: 600;
+    color: #2c3e50;
+    position: relative;
+    z-index: 2;
+  }
+
+  .child-category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.12);
+    z-index: 10000;
+  }
+
+  .child-category-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.05);
+  }
+}
+
+.CategoryWithChild {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  background-color: none;
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+.CategoryWithChild::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-button {
+  background-color: rgba(41, 112, 255, 1);
+  border: none;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000000000;
+  box-shadow: 0 4px 14px rgba(26, 115, 232, 0.4);
+  transition: all 0.2s ease;
+
+  i {
+    width: 24px;
+    height: 24px;
+    color: white;
+  }
+}
+
+.nav-button:hover {
+  background-color: #0d62d0;
+  box-shadow: 0 6px 18px rgba(26, 115, 232, 0.5);
+}
+
+.nav-button:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+.nav-button.left {
+  left: -17px;
+}
+
+.nav-button.right {
+  right: -17px;
+}
+.nav-button.top {
+  right: -17px;
+  top: 75px;
+}
+
+.nav-button.down {
+  right: -17px;
+  top: 120px;
+}
+.nav-button.ProductTop {
+  top: 55%;
+  left: 97%;
+  transform: translateY(-10px);
+}
+
+.nav-button.ProductDown {
+  top: 60%;
+  left: 97%;
+  transform: translateY(10px);
+}
+
+.category-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 0 0 auto;
+  width: 91px;
+  height: 80px;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  border-radius: 4.5px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0;
+}
+
+.category-card:nth-child(12n) {
+  margin-right: 0;
+}
+
+.category-card img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 3px;
+  border-radius: 10px;
+}
+
+.category-card h5 {
+  font-size: 10px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+  img {
+    transform: scale(1.1);
+    width: 45px;
+    height: 45px;
+    filter: brightness(1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+}
+
+// --------------------------------------------------------in POS Resolution-------------------------------------------------------------------------------
+
+@media (max-width: 1030px) and (min-width: 990px) {
+  .category-Container {
+    display: flex;
+    min-height: 150px !important;
+    max-height: 150px !important;
+  }
+
+  .category-section {
+    gap: 20px;
+    padding: 10px;
+  }
+  .content {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .category-card {
+    width: 70px;
+    height: 60px;
+    padding: 5px;
+  }
+
+  .category-card img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+  }
+
+  .category-card h5 {
+    font-size: 8.5px;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .category-card:hover {
+    transform: translateY(-5px);
+
+    img {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  .child-categorysection {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    .child-category-container {
+      margin-top: 8px;
+      padding: 4px;
+    }
+
+    .child-category-card {
+      width: 68px;
+      height: 58px;
+      padding: 5px;
+    }
+
+    .child-category-card img {
+      width: 28px;
+      height: 28px;
+      margin-bottom: 5px;
+    }
+
+    .child-category-card h5 {
+      font-size: 8.5px;
+      font-weight: 500;
+    }
+  }
+
+  .nav-button {
+    width: 30px;
+    height: 30px;
+
+    i {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .nav-button.top {
+    top: 60px;
+  }
+  .nav-button.down {
+    top: 100px;
+  }
+
+  .nav-button.ProductTop {
+    top: 45%;
+    left: 97%;
+    transform: translateY(-10px);
+  }
+
+  .nav-button.ProductDown {
+    top: 50%;
+    left: 97%;
+    transform: translateY(10px);
+  }
+
+  .add-category-card {
+    min-width: 70px;
+    width: 70px;
+    height: 60px;
+  }
+
+  .add-category-icon {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 4px;
+
+    i {
+      font-size: 20px;
+    }
+  }
+
+  .add-category-text {
+    font-size: 8.5px;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    white-space: nowrap;
+  }
+}
+
+
+
+$themes: (
+  Flamenco: (
+    Navbg: #fc8019,
+    NavColor: #ffffff,
+    LightBg: #fff8ed,
+    CategoryContainer: #fff8ed,
+    categorycard: #ffffff,
+    categorycardHover: #ffc072,
+    customerinfo: #ffffff,
+    GridCart: #ffc072,
+    GridCartBtnCustom: #fff8ed,
+    tableCOntainer: #ffefd4,
+    tableBorderline: #fd9b3a,
+    tableTag: #ffdba997,
+    qtybtnBoxshadow: 0 5px 15px rgba(255, 0, 0, 0.3),
+    ActionButton: linear-gradient(to right, #fc8019, #ed6109, #c4480a),
+    ActionButtonTextColor: white,
+    Border: #ffefd4,
+    ActionButtonHover: linear-gradient(to right, #ffb88c, #ff9a76, #ff7a5c),
+    childCategory: #fff8ed,
+    MobileContentColor: #ffdba9,
+    loaderPrimaryColor: #fd9b3a,
+    loaderSecondaryColor: #fd9b3a50,
+  ),
+
+  DayTheme: (
+    Navbg: rgba(41, 112, 255, 1),
+    NavColor: #ffffff,
+    Border: #c8c8c868,
+    tableBorderline: rgba(41, 112, 255, 0.792),
+    childCategory: #f8f9fa,
+    QtyBtnBoxShadow: 0 5px 15px rgba(41, 112, 255, 0.509),
+    MobileContentColor: #bcd8ff,
+    loaderPrimaryColor: #8ec0ff,
+    loaderSecondaryColor: #8ec0ff50,
+  ),
+  modern-midnight: (
+    Navbg: #2c3e50,
+    NavColor: #ffffff,
+    LightBg: #f5f6fa,
+    CategoryContainer: #f5f6fa,
+    categorycard: #ffffff,
+    categorycardHover: #3498db,
+    customerinfo: #ffffff,
+    GridCart: #3498db,
+    GridCartBtnCustom: #f5f6fa,
+    tableCOntainer: #ecf0f1,
+    tableBorderline: #bdc3c7,
+    tableTag: #2c3e502c,
+    qtybtnBoxshadow: 0 5px 15px rgba(52, 152, 219, 0.3),
+    ActionButton: linear-gradient(to right, #2c3e50, #34495e, #2c3e50),
+    ActionButtonTextColor: white,
+    Border: #dfe6e9,
+    ActionButtonHover: linear-gradient(to right, #3498db, #2980b9, #3498db),
+    childCategory: #f5f7fa,
+    MobileContentColor: #cfdce8,
+    loaderPrimaryColor: #a6bfd3,
+    loaderSecondaryColor: #a6bfd350,
+  ),
+  modern-crimson: (
+    Navbg: rgba(230, 57, 70, 1),
+    NavColor: #ffffff,
+    LightBg: #f9f9f9,
+    CategoryContainer: #f9f9f9,
+    CategoryCard: #ffffff,
+    CategoryCardHover: rgba(230, 57, 70, 0.1),
+    CustomerInfo: #ffffff,
+    GridCart: rgba(230, 57, 70, 1),
+    GridCartBtnCustom: #f9f9f9,
+    TableContainer: #ffffff,
+    TableBorderline: rgba(230, 57, 70, 0.3),
+    TableTag: rgba(230, 57, 70, 0.1),
+    QtyBtnBoxShadow: 0 5px 15px rgba(230, 57, 70, 0.3),
+    ActionButton:
+      linear-gradient(to right, rgba(230, 57, 70, 1), rgba(200, 40, 50, 1)),
+    ActionButtonTextColor: white,
+    Border: rgba(230, 57, 70, 0.2),
+    ActionButtonHover:
+      linear-gradient(to right, rgba(255, 100, 100, 1), rgba(230, 57, 70, 1)),
+    childCategory: #fef2f3,
+    MobileContentColor: #fcccd0,
+    loaderPrimaryColor: #f08080,
+    loaderSecondaryColor: #f0808050,
+  ),
+  oceanic-breeze: (
+    Navbg: #1abc9c,
+    NavColor: #ffffff,
+    LightBg: #e8f8f5,
+    CategoryContainer: #e8f8f5,
+    categorycard: #ffffff,
+    categorycardHover: #76d7c4,
+    customerinfo: #ffffff,
+    GridCart: #76d7c4,
+    GridCartBtnCustom: #e8f8f5,
+    tableCOntainer: #d1f2eb,
+    tableBorderline: #48c9b0,
+    tableTag: #a3e4d7,
+    qtybtnBoxshadow: 0 5px 15px rgba(26, 188, 156, 0.3),
+    ActionButton: linear-gradient(to right, #1abc9c, #16a085, #1abc9c),
+    ActionButtonTextColor: white,
+    Border: #d1f2eb,
+    ActionButtonHover: linear-gradient(to right, #76d7c4, #48c9b0, #76d7c4),
+    childCategory: #f0fdf9,
+    MobileContentColor: #9cf3da,
+    loaderPrimaryColor: #62e6c5,
+    loaderSecondaryColor: #62e6c550,
+  ),
+  sunset-glow: (
+    Navbg: #e67e22,
+    NavColor: #ffffff,
+    LightBg: #fef5e7,
+    CategoryContainer: #fef5e7,
+    categorycard: #ffffff,
+    categorycardHover: #f8c471,
+    customerinfo: #ffffff,
+    GridCart: #f8c471,
+    GridCartBtnCustom: #fef5e7,
+    tableCOntainer: #fdebd0,
+    tableBorderline: #f39c12,
+    tableTag: #f5b041,
+    qtybtnBoxshadow: 0 5px 15px rgba(230, 126, 34, 0.3),
+    ActionButton: linear-gradient(to right, #e67e22, #d35400, #e67e22),
+    ActionButtonTextColor: white,
+    Border: #fdebd0,
+    ActionButtonHover: linear-gradient(to right, #f8c471, #f39c12, #f8c471),
+    childCategory: #fef7ec,
+    MobileContentColor: #f5d192,
+    loaderPrimaryColor: #f0b559,
+    loaderSecondaryColor: #f0b55950,
+  ),
+  lavender-dream: (
+    Navbg: #9b59b6,
+    NavColor: #ffffff,
+    LightBg: #f5eef8,
+    CategoryContainer: #f5eef8,
+    categorycard: #ffffff,
+    categorycardHover: #c39bd3,
+    customerinfo: #ffffff,
+    GridCart: #c39bd3,
+    GridCartBtnCustom: #f5eef8,
+    tableCOntainer: #e8daef,
+    tableBorderline: #8e44ad,
+    tableTag: #bb8fce,
+    qtybtnBoxshadow: 0 5px 15px rgba(155, 89, 182, 0.3),
+    ActionButton: linear-gradient(to right, #9b59b6, #8e44ad, #9b59b6),
+    ActionButtonTextColor: white,
+    Border: #e8daef,
+    ActionButtonHover: linear-gradient(to right, #c39bd3, #9b59b6, #c39bd3),
+    childCategory: #faf6fd,
+    MobileContentColor: #eadaf4,
+    loaderPrimaryColor: #dbbdea,
+    loaderSecondaryColor: #dbbdea50,
+  ),
+  arctic-ice: (
+    Navbg: #3498db,
+    NavColor: #ffffff,
+    LightBg: #ebf5fb,
+    CategoryContainer: #ebf5fb,
+    categorycard: #ffffff,
+    categorycardHover: #85c1e9,
+    customerinfo: #ffffff,
+    GridCart: #85c1e9,
+    GridCartBtnCustom: #ebf5fb,
+    tableCOntainer: #d6eaf8,
+    tableBorderline: #2e86c1,
+    tableTag: #aed6f1,
+    qtybtnBoxshadow: 0 5px 15px rgba(52, 152, 219, 0.3),
+    ActionButton: linear-gradient(to right, #3498db, #2e86c1, #3498db),
+    ActionButtonTextColor: white,
+    Border: #d6eaf8,
+    ActionButtonHover: linear-gradient(to right, #85c1e9, #5dade2, #85c1e9),
+    childCategory: #f2f8fd,
+    MobileContentColor: #c1dff6,
+    loaderPrimaryColor: #8ac5ef,
+    loaderSecondaryColor: #8ac5ef50,
+  ),
+  golden-sunrise: (
+    Navbg: #f1c40f,
+    NavColor: #ffffff,
+    LightBg: #fef9e7,
+    CategoryContainer: #fef9e7,
+    categorycard: #ffffff,
+    categorycardHover: #f7dc6f,
+    customerinfo: #ffffff,
+    GridCart: #f7dc6f,
+    GridCartBtnCustom: #fef9e7,
+    tableCOntainer: #fcf3cf,
+    tableBorderline: #f39c12,
+    tableTag: #f4d03f,
+    qtybtnBoxshadow: 0 5px 15px rgba(241, 196, 15, 0.3),
+    ActionButton: linear-gradient(to right, #f1c40f, #f39c12, #f1c40f),
+    ActionButtonTextColor: white,
+    Border: #fcf3cf,
+    ActionButtonHover: linear-gradient(to right, #f7dc6f, #f4d03f, #f7dc6f),
+    childCategory: #fdfde9,
+    MobileContentColor: #fbf38d,
+    loaderPrimaryColor: #f9e54b,
+    loaderSecondaryColor: #f9e54b50,
+  ),
+  emerald-envy: (
+    Navbg: #2ecc71,
+    NavColor: #ffffff,
+    LightBg: #e8f6f3,
+    CategoryContainer: #e8f6f3,
+    categorycard: #ffffff,
+    categorycardHover: #58d68d,
+    customerinfo: #ffffff,
+    GridCart: #58d68d,
+    GridCartBtnCustom: #e8f6f3,
+    tableCOntainer: #d5f5e3,
+    tableBorderline: #27ae60,
+    tableTag: #82e0aa,
+    qtybtnBoxshadow: 0 5px 15px rgba(46, 204, 113, 0.3),
+    ActionButton: linear-gradient(to right, #2ecc71, #27ae60, #2ecc71),
+    ActionButtonTextColor: white,
+    Border: #d5f5e3,
+    ActionButtonHover: linear-gradient(to right, #58d68d, #2ecc71, #58d68d),
+    childCategory: #f1fcf5,
+    MobileContentColor: #bef4d4,
+    loaderPrimaryColor: #8beab3,
+    loaderSecondaryColor: #8beab350,
+  ),
+
+  coral-bliss: (
+    Navbg: #ff6f61,
+    NavColor: #ffffff,
+    LightBg: #fff5f4,
+    CategoryContainer: #fff5f4,
+    categorycard: #ffffff,
+    categorycardHover: #ff9a8a,
+    customerinfo: #ffffff,
+    GridCart: #ff9a8a,
+    GridCartBtnCustom: #fff5f4,
+    tableCOntainer: #ffe5e2,
+    tableBorderline: #ff4a3a,
+    tableTag: #ffc4bc,
+    qtybtnBoxshadow: 0 5px 15px rgba(255, 111, 97, 0.3),
+    ActionButton: linear-gradient(to right, #ff6f61, #ff4a3a, #ff6f61),
+    ActionButtonTextColor: white,
+    Border: #ffe5e2,
+    ActionButtonHover: linear-gradient(to right, #ff9a8a, #ff6f61, #ff9a8a),
+    childCategory: #fff2f1,
+    MobileContentColor: #ffccc7,
+    loaderPrimaryColor: #ffa8a0,
+    loaderSecondaryColor: #ffa8a050,
+  ),
+
+  royal-amethyst: (
+    Navbg: #8e44ad,
+    NavColor: #ffffff,
+    LightBg: #f4ecf7,
+    CategoryContainer: #f4ecf7,
+    categorycard: #ffffff,
+    categorycardHover: #af7ac5,
+    customerinfo: #ffffff,
+    GridCart: #af7ac5,
+    GridCartBtnCustom: #f4ecf7,
+    tableCOntainer: #e8daef,
+    tableBorderline: #7d3c98,
+    tableTag: #c39bd3,
+    qtybtnBoxshadow: 0 5px 15px rgba(142, 68, 173, 0.3),
+    ActionButton: linear-gradient(to right, #8e44ad, #7d3c98, #8e44ad),
+    ActionButtonTextColor: white,
+    Border: #e8daef,
+    ActionButtonHover: linear-gradient(to right, #af7ac5, #8e44ad, #af7ac5),
+    childCategory: #fbf6fd,
+    MobileContentColor: #ebd9f5,
+    loaderPrimaryColor: #dcbaed,
+    loaderSecondaryColor: #dcbaed50,
+  ),
+
+  sapphire-sky: (
+    Navbg: #3498db,
+    NavColor: #ffffff,
+    LightBg: #ebf5fb,
+    CategoryContainer: #ebf5fb,
+    categorycard: #ffffff,
+    categorycardHover: #5dade2,
+    customerinfo: #ffffff,
+    GridCart: #5dade2,
+    GridCartBtnCustom: #ebf5fb,
+    tableCOntainer: #d6eaf8,
+    tableBorderline: #2e86c1,
+    tableTag: #aed6f1,
+    qtybtnBoxshadow: 0 5px 15px rgba(52, 152, 219, 0.3),
+    ActionButton: linear-gradient(to right, #3498db, #2e86c1, #3498db),
+    ActionButtonTextColor: white,
+    Border: #d6eaf8,
+    ActionButtonHover: linear-gradient(to right, #5dade2, #3498db, #5dade2),
+    childCategory: #f2f8fd,
+    MobileContentColor: #c1dff6,
+    loaderPrimaryColor: #8ac5ef,
+    loaderSecondaryColor: #8ac5ef50,
+  ),
+
+  golden-haze: (
+    Navbg: #f39c12,
+    NavColor: #ffffff,
+    LightBg: #fef5e7,
+    CategoryContainer: #fef5e7,
+    categorycard: #ffffff,
+    categorycardHover: #f8c471,
+    customerinfo: #ffffff,
+    GridCart: #f8c471,
+    GridCartBtnCustom: #fef5e7,
+    tableCOntainer: #fdebd0,
+    tableBorderline: #e67e22,
+    tableTag: #f5b041,
+    qtybtnBoxshadow: 0 5px 15px rgba(243, 156, 18, 0.3),
+    ActionButton: linear-gradient(to right, #f39c12, #e67e22, #f39c12),
+    ActionButtonTextColor: white,
+    Border: #fdebd0,
+    ActionButtonHover: linear-gradient(to right, #f8c471, #f39c12, #f8c471),
+    childCategory: #fffbeb,
+    MobileContentColor: #fce38b,
+    loaderPrimaryColor: #facf4f,
+    loaderSecondaryColor: #facf4f50,
+  ),
+
+  rose-quartz: (
+    Navbg: #f78fb3,
+    NavColor: #ffffff,
+    LightBg: #fff0f5,
+    CategoryContainer: #fff0f5,
+    categorycard: #ffffff,
+    categorycardHover: #f8a5c2,
+    customerinfo: #ffffff,
+    GridCart: #f8a5c2,
+    GridCartBtnCustom: #fff0f5,
+    tableCOntainer: #ffdde1,
+    tableBorderline: #f06292,
+    tableTag: #ffb3c1,
+    qtybtnBoxshadow: 0 5px 15px rgba(247, 143, 179, 0.3),
+    ActionButton: linear-gradient(to right, #f78fb3, #f06292, #f78fb3),
+    ActionButtonTextColor: white,
+    Border: #ffdde1,
+    ActionButtonHover: linear-gradient(to right, #f8a5c2, #f78fb3, #f8a5c2),
+    childCategory: #fdf2f6,
+    MobileContentColor: #fbcfdf,
+    loaderPrimaryColor: #f78fb3,
+    loaderSecondaryColor: #f78fb350,
+  ),
+
+  midnight-forest: (
+    Navbg: #2c3e50,
+    NavColor: #ffffff,
+    LightBg: #ecf0f1,
+    CategoryContainer: #ecf0f1,
+    categorycard: #ffffff,
+    categorycardHover: #34495e,
+    customerinfo: #ffffff,
+    GridCart: #34495e,
+    GridCartBtnCustom: #ecf0f1,
+    tableCOntainer: #dfe6e9,
+    tableBorderline: #2c3e50,
+    tableTag: #bdc3c7,
+    qtybtnBoxshadow: 0 5px 15px rgba(44, 62, 80, 0.3),
+    ActionButton: linear-gradient(to right, #2c3e50, #34495e, #2c3e50),
+    ActionButtonTextColor: white,
+    Border: #dfe6e9,
+    ActionButtonHover: linear-gradient(to right, #34495e, #2c3e50, #34495e),
+    childCategory: #f5f7fa,
+    MobileContentColor: #cfdce8,
+    loaderPrimaryColor: #a6bfd3,
+    loaderSecondaryColor: #a6bfd350,
+  ),
+
+  peach-sorbet: (
+    Navbg: #ff9a8a,
+    NavColor: #ffffff,
+    LightBg: #fff5f4,
+    CategoryContainer: #fff5f4,
+    categorycard: #ffffff,
+    categorycardHover: #ffc4bc,
+    customerinfo: #ffffff,
+    GridCart: #ffc4bc,
+    GridCartBtnCustom: #fff5f4,
+    tableCOntainer: #ffe5e2,
+    tableBorderline: #ff6f61,
+    tableTag: #ffd5d1,
+    qtybtnBoxshadow: 0 5px 15px rgba(255, 154, 138, 0.3),
+    ActionButton: linear-gradient(to right, #ff9a8a, #ff6f61, #ff9a8a),
+    ActionButtonTextColor: white,
+    Border: #ffe5e2,
+    ActionButtonHover: linear-gradient(to right, #ffc4bc, #ff9a8a, #ffc4bc),
+    childCategory: #fef4f2,
+    MobileContentColor: #ffd0c8,
+    loaderPrimaryColor: #ff9a8a,
+    loaderSecondaryColor: #ff9a8a50,
+  ),
+
+  electric-violet: (
+    Navbg: #8a2be2,
+    NavColor: #ffffff,
+    LightBg: #f3e8ff,
+    CategoryContainer: #f3e8ff,
+    categorycard: #ffffff,
+    categorycardHover: #a45de5,
+    customerinfo: #ffffff,
+    GridCart: #a45de5,
+    GridCartBtnCustom: #f3e8ff,
+    tableCOntainer: #e9d5ff,
+    tableBorderline: #7b1fa2,
+    tableTag: #c792e6,
+    qtybtnBoxshadow: 0 5px 15px rgba(138, 43, 226, 0.3),
+    ActionButton: linear-gradient(to right, #8a2be2, #7b1fa2, #8a2be2),
+    ActionButtonTextColor: white,
+    Border: #e9d5ff,
+    ActionButtonHover: linear-gradient(to right, #a45de5, #8a2be2, #a45de5),
+    childCategory: #faf5ff,
+    MobileContentColor: #e9d6fe,
+    loaderPrimaryColor: #d8b6fc,
+    loaderSecondaryColor: #d8b6fc50,
+  ),
+
+  sunset-dusk: (
+    Navbg: #e74c3c,
+    NavColor: #ffffff,
+    LightBg: #fdedec,
+    CategoryContainer: #fdedec,
+    categorycard: #ffffff,
+    categorycardHover: #ec7063,
+    customerinfo: #ffffff,
+    GridCart: #ec7063,
+    GridCartBtnCustom: #fdedec,
+    tableCOntainer: #fadbd8,
+    tableBorderline: #c0392b,
+    tableTag: #f1948a,
+    qtybtnBoxshadow: 0 5px 15px rgba(231, 76, 60, 0.3),
+    ActionButton: linear-gradient(to right, #e74c3c, #c0392b, #e74c3c),
+    ActionButtonTextColor: white,
+    Border: #fadbd8,
+    ActionButtonHover: linear-gradient(to right, #ec7063, #e74c3c, #ec7063),
+    childCategory: #fef3f2,
+    MobileContentColor: #fcd0cc,
+    loaderPrimaryColor: #f9b0a8,
+    loaderSecondaryColor: #f9b0a850,
+  ),
+);
+
+@each $theme, $colors in $themes {
+  .#{$theme} {
+    .loader:before {
+      content: "";
+
+      background: map-get($colors, loaderSecondaryColor);
+    }
+
+    .loader:after {
+      content: "";
+
+      background: map-get($colors, loaderPrimaryColor);
+    }
+
+    .nav-button {
+      background-color: map-get($colors, Navbg);
+      box-shadow: map-get($colors, qtybtnBoxshadow);
+    }
+
+    .nav-button:hover {
+      box-shadow: map-get($colors, qtybtnBoxshadow);
+    }
+
+    .category-Container {
+      background-color: map-get($colors, CategoryContainer);
+    }
+    .category-card {
+      background-color: map-get($colors, categorycard);
+    }
+
+    .category-card:hover {
+      background-color: map-get($colors, categorycardHover);
+    }
+
+    .child-category-container {
+      border-left: 6px solid map-get($colors, Navbg);
+      // background-color: map-get($colors, childCategory);
+    }
+
+    .child-category-card {
+      box-shadow: map-get($colors, qtybtnBoxshadow);
+    }
+
+    .add-category-card {
+      border: 2px dashed map-get($colors, Navbg);
+    }
+
+    .add-category-icon {
+      background-color: map-get($colors, Navbg);
+    }
+
+    .add-category-text {
+      color: map-get($colors, Navbg);
+    }
+
+    .content {
+      @media (max-width: 600px) {
+        background-color: map-get($colors, MobileContentColor);
+      }
+    }
+    .CategoryWithChild {
+      @media (max-width: 600px) {
+        background-color: map-get($colors, MobileContentColor);
+      }
+    }
+  }
+}
+
+
+
+
+
+@media (max-width: 991px) {
+    .navbar-collapse.show .form-inline {
+      margin-left: 0 !important;
+      width: 50%;
+      justify-content: center;
+    }
+    .navbar {
+      min-height: 70px;
+      height: auto;
+      .navbarcontentItems {
+        margin-left: 0%;
+      }
+    }
+  
+    .secondSection {
+      position: relative;
+  
+      .secondNav {
+        background-color: rgba(41, 112, 255, 1);
+        min-height: 60px;
+        margin: -1px;
+      }
+  
+      .parent-category {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        margin-top: -6%;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+   
+    .nav-button {
+        display: none;
+      }
+  
+      .category-Container {
+        min-height: 108px !important;
+        max-height: 608px !important;
+        width: 22%;
+        position: absolute;
+        bottom: 0;
+        padding: 0;
+        top: 0;
+        right: 1%;
+        background-color: transparent;
+        margin-top: -1px;
+      }
+  
+      .category-section {
+        gap: 0px;
+        padding: 0px;
+        height: 85vh;
+      }
+  
+      
+      .content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        min-height: 764px !important;
+        max-height: 764px !important;
+        overflow: auto;
+        background-color: #b6cbf4;
+        padding: 5px;
+        border-radius: 12px;
+        overflow: none;
+      }
+      .content::-webkit-scrollbar {
+        display: none;
+      }
+  
+      .child-categorysection {
+        padding-left: 0px;
+        padding-right: 0px;
+  
+        .child-category-container {
+          margin-top: 0px;
+          padding: 1px;
+          padding-left: 0px;
+          border-left: 6px solid #007bff;
+        }
+  
+        .child-category-card {
+          flex: 0 0 auto;
+          width: 70px;
+          height: 80px;
+          padding: 5px;
+        }
+      }
+  
+      .CategoryWithChild {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        // min-height: 764px !important;
+        max-height: 764px !important;
+        overflow: auto;
+        background-color: #b6cbf4;
+        padding: 5px;
+        border-radius: 12px;
+        overflow: none;
+      }
+  
+      .category-card {
+        width: 100%;
+        height: 80px;
+      }
+  
+      .category-card img {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 3px;
+      }
+  
+      .category-card h5 {
+        font-size: 10px;
+        margin: 0;
+        font-weight: 500;
+      }
+  
+      .add-category-card {
+        min-width: 70px;
+        width: 100%;
+        height: 80px;
+      }
+  
+      .add-category-icon {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 4px;
+  
+        i {
+          font-size: 20px;
+        }
+      }
+  
+      .add-category-text {
+        font-size: 8.5px;
+        font-weight: 600;
+        letter-spacing: 0.1px;
+        white-space: nowrap;
+      }
+    }
+  
+   
+  
+   
+  
+  
+  
+  @media (max-width: 545px) and (min-width: 500px) {
+   
+  
+      .child-categorysection {
+        padding-left: 0px;
+        padding-right: 0px;
+  
+        .child-category-container {
+          margin-top: 0px;
+          padding: 1px;
+          padding-left: 0px;
+          border-left: 6px solid #007bff;
+        }
+  
+        .child-category-card {
+          flex: 0 0 auto;
+          width: 100px;
+          height: 80px;
+          padding: 5px;
+        }
+      }
+    
+  }
+

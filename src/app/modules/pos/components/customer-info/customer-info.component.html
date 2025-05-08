@@ -1,0 +1,78 @@
+<div
+                [ngClass]="{
+                  'customer-info': withoutCustandPro,
+                  'customer-infoTheme2': !withoutCustandPro
+                }"
+                *ngIf="!isMobileView || selectedTab === 0"
+              >
+                <div
+                  class="row"
+                  [ngClass]="{
+                    'g-3': withoutCustandPro,
+                    'g-2': !withoutCustandPro
+                  }"
+                >
+                  <div class="col-md-6">
+                    <div class="input-group custom-input">
+                      <span class="input-group-text">
+                        <i class="bi bi-person"></i>
+                      </span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Customer Name/Code (F1)"
+                     
+                      />
+                      <span class="input-group-text input-group-text2">
+                        <i class="bi bi-search search-icon"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="input-group custom-input">
+                      <span class="input-group-text">
+                        <i class="bi bi-telephone"></i>
+                      </span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Mobile Number (F2)"
+                      
+                      />
+                      <span class="input-group-text input-group-text2">
+                        <i class="bi bi-search search-icon"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="input-group custom-input">
+                      <span class="input-group-text">
+                        <i class="bi bi-geo-alt"></i>
+                      </span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Area/Address (F3)"
+                      />
+                      <span class="input-group-text input-group-text2">
+                        <i class="bi bi-search search-icon"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="input-group custom-input">
+                      <span class="input-group-text">
+                       
+                        <i class="bi bi-upc-scan"></i>
+                      </span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Scan BarCode"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
