@@ -1,0 +1,163 @@
+<div class="login" >
+  <div class="container">
+   
+    <div class="form-container">
+        
+      <div class="header">
+        <h1 class="welcome-text">Welcome Back!</h1>
+        <p class="subtitle">Please sign in to access your account</p>
+      </div>
+
+      <div class="error-container" id="error-container" *ngIf="error">
+        <div class="error-message">
+          <i class="bi bi-exclamation-triangle-fill error-icon"></i>
+          <span id="error-text">    {{ error }}</span>
+          <button class="close-error"  (click)="closeError()">
+            <i class="bi bi-x"></i>
+          </button>
+        </div>
+      </div>
+      <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+      <div class="form-group">
+        <label for="company-code">Company Code</label>
+        <div class="input-with-icon">
+          <i class="bi bi-building-check input-icon"></i>
+
+          <input
+          type="text"
+          id="company-code"
+          name="companyCode"
+          placeholder="Enter your company code"
+          ngModel
+          #companyCode="ngModel"
+          required
+          [value]="login.companyCode"
+          />
+        </div>
+        <small class="text-danger" *ngIf="!companyCode.valid && companyCode.touched">
+            Company code is required
+          </small>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <div class="input-with-icon">
+          <i class="bi bi-envelope-at-fill input-icon"></i>
+
+          <input  type="email" 
+          id="email" 
+          name="email"
+          placeholder="Enter your email" 
+          ngModel
+          #email="ngModel"
+          required
+          email
+          [value]="login.email" />
+        </div>
+        <small class="text-danger" *ngIf="!email.valid && email.touched">
+            Please enter a valid email address
+          </small>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="input-with-icon">
+          <i class="bi bi-shield-lock-fill input-icon"></i>
+
+          <input
+          [type]="showPassword ? 'text' : 'password'"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          ngModel
+          #password="ngModel"
+          required
+          [value]="login.password"
+          />
+
+          <button
+            class="toggle-password"
+            type="button"
+            (click)="togglePasswordVisibility()"
+          >
+            <i *ngIf="!showPassword" class="bi bi-eye-fill"></i>
+
+            <i *ngIf="showPassword" class="bi bi-eye-slash-fill"></i>
+          </button>
+        </div>
+        <small class="text-danger" *ngIf="!password.valid && password.touched">
+            Password is required
+          </small>
+      </div>
+
+      <div class="remember-forgot">
+        <div class="remember-me">
+          <input  type="checkbox" 
+          id="remember-me" 
+          name="rememberMe"
+          [(ngModel)]="rememberMe"/>
+          <label for="remember-me">Remember me</label>
+        </div>
+        <a href="#" class="forgot-password">Forgotten Password?</a>
+      </div>
+
+      <button 
+      class="signin-button" 
+      type="submit"
+      [disabled]="!authForm.valid || isLoading"
+    >
+      <span *ngIf="!isLoading">Sign In</span>
+      <span *ngIf="isLoading">
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Signing in...
+      </span>
+    </button>
+    </form>
+      <p class="signup-text">
+        Don't have an account?
+        <a href="#" class="signup-link">Create an account</a>
+      </p>
+    </div>
+
+    <div  class="login-image">
+      <div class="pos-visualization">
+        <div class="pos-terminal">
+          <div class="terminal-screen">
+            <div class="screen-content">
+              <div class="receipt-item"></div>
+              <div class="receipt-item"></div>
+              <div class="receipt-item"></div>
+              <div class="receipt-total"></div>
+            </div>
+          </div>
+          <div class="terminal-base"></div>
+          <div class="card-reader">
+            <div class="card-slot"></div>
+          </div>
+        </div>
+
+        <div class="barcode-scanner">
+          <div class="scanner-light"></div>
+        </div>
+
+     
+      </div>
+
+      <div class="floating-elements">
+        <div class="floating-element payment-icon"></div>
+        <div class="floating-element barcode-icon"></div>
+        <div class="floating-element receipt-icon"></div>
+        <div class="floating-element cart-icon"></div>
+
+        <div class="floating-element qrcode-icon"></div>
+        <div class="floating-element dollar-icon"></div>
+      </div>
+
+      <div class="logo-container">
+        <div class="logo">ca<span>ad</span></div>
+        <p class="tagline">THE COMPLETE ERP</p>
+      </div>
+    </div>
+  </div>
+</div>
+
