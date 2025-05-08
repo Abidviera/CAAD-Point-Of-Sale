@@ -1,0 +1,77 @@
+<div class="POS" [ngClass]="selectedTheme">
+  <div #fullscreenElement class="PointOfSale">
+    <app-navbar></app-navbar>
+    <div class="secondSection">
+      <div class="secondNav"></div>
+      <div class="parent-category">
+        <div class="WEBPOS">
+          <app-category></app-category>
+
+          <div
+            class="row g-2 Content-Section"
+            [ngClass]="{
+              'Content-Section2': withoutCustandPro,
+              'Content-Section': !withoutCustandPro
+            }"
+          >
+            <div
+              [ngClass]="{
+                'col-md-8': withoutCustandPro,
+                'col-md-5': !withoutCustandPro
+              }"
+            >
+ 
+
+            <app-customer-info></app-customer-info>
+
+              <app-products-grid></app-products-grid>
+
+              <app-pos-payment-method-buttons></app-pos-payment-method-buttons>
+            </div>
+
+            <div
+              class="col-md-2"
+              [ngClass]="{
+                'col-md-4': withoutCustandPro,
+                'col-md-2': !withoutCustandPro
+              }"
+            >
+              <div
+                class="action-containerTheme2"
+                [ngClass]="{
+                  'action-containerWithoutcusPro': withoutCustandPro,
+                  'action-containerTheme2': !withoutCustandPro
+                }"
+              >
+                <app-pos-order-type-buttons></app-pos-order-type-buttons>
+              </div>
+              <div
+                class="action-containerTheme2"
+                [ngClass]="{
+                  'action-containerWithoutcusPro': withoutCustandPro,
+                  'action-containerTheme2': !withoutCustandPro
+                }"
+              >
+                <div class="ActionBtn-Section d-flex justify-content-center">
+                  <div class="icon-container">
+                    <app-pos-order-action-buttons></app-pos-order-action-buttons>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-md-5"
+              [ngClass]="{
+                productsPartHide: withoutCustandPro,
+                '': !withoutCustandPro
+              }"
+            >
+              <app-products></app-products>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
