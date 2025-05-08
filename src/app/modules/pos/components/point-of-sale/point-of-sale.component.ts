@@ -7,6 +7,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { CommonUtil } from '../../../../shared/utils/CommonUtil';
 
 @Component({
   selector: 'app-point-of-sale',
@@ -369,4 +370,8 @@ export class PointOfSaleComponent {
       behavior: 'auto',
     });
   }
+
+
+
+  
 }

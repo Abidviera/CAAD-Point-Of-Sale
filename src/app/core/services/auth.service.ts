@@ -9,29 +9,21 @@ import { UserLogin } from '../models/userlogin.model';
 import { Router } from '@angular/router';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { CurrentShift } from '../models/currentShift.model';
-
-export interface AuthResponseData {
-  user: any;
-  jwt_bearer_token: string;
-  expiresIn: string;
-  company: UserCompanyDTO;
-  currentShift: CurrentShift;
-}
-
+import { AuthResponseData } from '../models/authModels/AuthResponseData.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-  user = new BehaviorSubject<UserLogin  | null>(null);
+  user = new BehaviorSubject<UserLogin | null>(null);
   private tokenExpirationTimer: any;
-  constructor(
-    private http: HttpClient,
-    private router: Router
-  ) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
- 
-  public login(email: string, password: string, company: string): Observable<AuthResponseData> {
+  public login(
+    email: string,
+    password: string,
+    company: string
+  ): Observable<AuthResponseData> {
     return this.http
       .post<AuthResponseData>(environment.apiUrl + 'auth/login', {
         email: email,
@@ -42,14 +34,20 @@ export class AuthService {
       .pipe(
         catchError(this.handleError),
         tap((resData) => {
-          this.handleAuthentication(resData.user, resData.jwt_bearer_token, +resData.expiresIn, resData.company, resData.currentShift);
+          this.handleAuthentication(
+            resData.user,
+            resData.jwt_bearer_token,
+            +resData.expiresIn,
+            resData.company,
+            resData.currentShift
+          );
         })
       );
   }
 
   autoLogin(): void {
     const userDataString = localStorage.getItem(appConstant.userStorageKey);
-if (!userDataString) return;
+    if (!userDataString) return;
 
     const userData: {
       user: any;
@@ -62,11 +60,19 @@ if (!userDataString) return;
     if (!userData) {
       return;
     }
-    const loadedUser = new UserLogin(userData.user, userData.jwt_bearer_token, new Date(userData._tokenExpirationDate), userData.company, userData.role);
+    const loadedUser = new UserLogin(
+      userData.user,
+      userData.jwt_bearer_token,
+      new Date(userData._tokenExpirationDate),
+      userData.company,
+      userData.role
+    );
 
     if (loadedUser.jwt_bearer_token) {
       this.user.next(loadedUser);
-      const expirationDuration = new Date(userData._tokenExpirationDate).getTime() - new Date().getTime();
+      const expirationDuration =
+        new Date(userData._tokenExpirationDate).getTime() -
+        new Date().getTime();
       this.autoLogout(expirationDuration);
     }
   }
@@ -75,11 +81,11 @@ if (!userDataString) return;
     this.user.next(null);
     CommonUtil.clearLocalStorage();
     const savedLogin = localStorage.getItem('savedLogin');
-   
+
     localStorage.clear();
 
     if (savedLogin) {
-        localStorage.setItem('savedLogin', savedLogin);
+      localStorage.setItem('savedLogin', savedLogin);
     }
 
     this.router.navigate(['/auth/signin']);
@@ -96,14 +102,33 @@ if (!userDataString) return;
     }, expirationDuration);
   }
 
-  private handleAuthentication(user: any, jwt_bearer_token: string, expiresIn: number, company: UserCompanyDTO, currentshift?: any): void {
-    const expirationDate = new Date(new Date().getTime() + expiresIn * 100000000000000);
-    const userLogin = new UserLogin(user, jwt_bearer_token, expirationDate, company, user?.roles?.userRoleName, currentshift);
+  private handleAuthentication(
+    user: any,
+    jwt_bearer_token: string,
+    expiresIn: number,
+    company: UserCompanyDTO,
+    currentshift?: any
+  ): void {
+    const expirationDate = new Date(
+      new Date().getTime() + expiresIn * 100000000000000
+    );
+    const userLogin = new UserLogin(
+      user,
+      jwt_bearer_token,
+      expirationDate,
+      company,
+      user?.roles?.userRoleName,
+      currentshift
+    );
     this.user.next(user);
     localStorage.setItem(appConstant.userStorageKey, JSON.stringify(userLogin));
   }
 
-  public checkAuth(email: string, password: string, company: string): Observable<AuthResponseData> {
+  public checkAuth(
+    email: string,
+    password: string,
+    company: string
+  ): Observable<AuthResponseData> {
     return this.http
       .post<AuthResponseData>(environment.apiUrl + 'auth/login', {
         email: email,
@@ -121,7 +146,9 @@ if (!userDataString) return;
     }
     switch (errorRes.statusText) {
       case 'Unauthorized':
-        errorMessage = errorRes?.error?.message[0]?.message ? errorRes.error.message[0].message : 'This password/email is not correct.';
+        errorMessage = errorRes?.error?.message[0]?.message
+          ? errorRes.error.message[0].message
+          : 'This password/email is not correct.';
         break;
     }
     return throwError(errorMessage);

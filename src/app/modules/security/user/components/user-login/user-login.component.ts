@@ -5,18 +5,13 @@ import { AuthService } from '../../../../../core/services/auth.service';
 import { Router } from '@angular/router';
 import { CommonUtil } from '../../../../../shared/utils/CommonUtil';
 import { EmployeeService } from '../../../../../core/services/employee.service';
-
-export class login {
-  email?: string;
-  password?: string;
-  companyCode?: string;
-}
+import { login } from '../../../../../core/models/authModels/login.model';
 
 @Component({
   selector: 'app-user-login',
   standalone: false,
   templateUrl: './user-login.component.html',
-  styleUrl: './user-login.component.scss'
+  styleUrl: './user-login.component.scss',
 })
 export class UserLoginComponent {
   showPassword: boolean = false;
@@ -24,7 +19,7 @@ export class UserLoginComponent {
   isLoading = false;
   error: string | null = null;
   @ViewChild('authForm') authForm!: NgForm;
-  login: login = new login(); 
+  login: login = new login();
   today: string = formatDate(new Date(), 'dd-MM-yyyy hh:mm:ss', 'en');
   allSettings = {};
   rememberMe = false;
@@ -32,8 +27,7 @@ export class UserLoginComponent {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private employeeService: EmployeeService,
-  
+    private employeeService: EmployeeService
   ) {}
 
   ngOnInit() {
@@ -41,11 +35,9 @@ export class UserLoginComponent {
     if (savedLogin) {
       const loginData = JSON.parse(savedLogin);
       this.login = loginData;
-      this.rememberMe = true; 
+      this.rememberMe = true;
     }
   }
-
-
 
   async onSubmit(form: NgForm) {
     if (!form.valid) {
@@ -58,7 +50,9 @@ export class UserLoginComponent {
       const password = form.value.password;
       const companyCode = form.value.companyCode;
       this.isLoading = true;
-      const authObs = await this.authService.login(email, password, companyCode).toPromise();
+      const authObs = await this.authService
+        .login(email, password, companyCode)
+        .toPromise();
       this.router.navigateByUrl('/d');
       if (this.rememberMe) {
         const loginData = { email, password, companyCode };
@@ -92,19 +86,17 @@ export class UserLoginComponent {
         subject: 'Logged in User Details',
         emailBody: emailTemplate,
       };
-      const result = (await this.employeeService.sendEmail(emailData)).toPromise();
+      const result = (
+        await this.employeeService.sendEmail(emailData)
+      ).toPromise();
     } catch {}
   }
-
-
 
   togglePasswordVisibility(): void {
     this.showPassword = !this.showPassword;
   }
 
-
-
-closeError() {
-  this.error = null;
-}
+  closeError() {
+    this.error = null;
+  }
 }

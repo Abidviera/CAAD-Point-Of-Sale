@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -6,16 +5,15 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EmployeeService {
-
   constructor(private http: HttpClient) {}
 
-
-
   async sendEmail(emailData: any): Promise<Observable<any>> {
-    return this.http.post<any>(environment.apiUrl + 'email/send/', emailData).pipe(catchError(this.handleError));
+    return this.http
+      .post<any>(environment.apiUrl + 'email/send/', emailData)
+      .pipe(catchError(this.handleError));
   }
 
   private handleError(errorRes: HttpErrorResponse) {
@@ -38,5 +36,4 @@ export class EmployeeService {
     }
     return throwError(errorMessage);
   }
-
 }
