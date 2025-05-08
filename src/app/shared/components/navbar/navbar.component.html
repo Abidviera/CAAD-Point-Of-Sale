@@ -1,0 +1,90 @@
+
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand">
+          <div class="logo-container">
+            <p class="logo">caad</p>
+            <p class="subtitle">THE COMPLETE ERP</p>
+          </div>
+        </a>
+
+        <div class="Navtabs-container">
+          <ul class="tabs">
+            <li class="tab-item" [class.active]="selectedTab === 0" (click)="onTabChange(0)"><i class="bi bi-person-fill-add"></i></li>
+            <li class="tab-item" [class.active]="selectedTab === 1" (click)="onTabChange(1)"><i class="bi bi-cart-check-fill"></i></li>
+          </ul>
+        </div>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="bi bi-list ToggleIcon"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="d-flex align-items-center navbarcontentItems">
+            <!-- <img
+                src="../../../assets/images/pos/whatsapp.png"
+                alt="QR Code"
+                class="qr-code mr-3"
+              /> -->
+            <span class="navbar-text mx-3">
+              Shift ID: 546 <br />
+              Day ID: 546
+            </span>
+            <span class="navbar-text">
+              Developed by C POS Software Solutions <br />
+              Contact: 055 484 0583 | www.cpos.ae
+            </span>
+            <a href="#" class="navbar-text mx-3">
+              Live Chat
+              <i class="fa fa-comments-o fs-4"></i>
+            </a>
+            <span class="navbar-text mx-3">
+              03:10 PM <br />
+              29th Oct 2022
+            </span>
+            <span class="navbar-text mx-3"> <strong class="status">Admin</strong> #95241 </span>
+            <span class="navbar-text mx-3">
+              <div class="Onlinestatus">
+                <div class="indicator"></div>
+                <p>Online</p>
+              </div>
+            </span>
+
+            <label class="ui-switch">
+              <input type="checkbox" (change)="toggleTheme()" />
+              <div class="slider">
+                <div class="circle"></div>
+              </div>
+            </label>
+          </div>
+
+          <form class="form-inline d-flex justify-content-between">
+            <div class="navActionButons">
+              <img src="PointOfSale/navbar/homes.png" alt="Home Icon" class="home-icon"  />
+              <p class="home-text">HOME</p>
+            </div>
+            <div class="navActionButons" *ngIf="!isFullScreen" (click)="openFullscreen()">
+              <img src="PointOfSale/navbar/Maximize alt (2).png" alt="Home Icon" class="home-icon" />
+              <p class="home-text">MAXIMIZE</p>
+            </div>
+            <div class="navActionButons" *ngIf="isFullScreen" (click)="closeFullscreen()">
+              <img src="PointOfSale/navbar/Duplicate.png" alt="Home Icon" class="home-icon" />
+              <p class="home-text">MINIMIZE</p>
+            </div>
+
+            <div class="navActionButons">
+              <img src="PointOfSale/navbar/shutdown-icon-main.png" alt="Home Icon" class="home-icon"  />
+              <p class="home-text" >LOGOUT</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
