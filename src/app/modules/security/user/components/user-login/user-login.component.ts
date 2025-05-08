@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { CommonUtil } from '../../../../../shared/utils/CommonUtil';
 import { EmployeeService } from '../../../../../core/services/employee.service';
 import { login } from '../../../../../core/models/authModels/login.model';
+import { ToastAlert } from '../../../../../shared/alert/toast.alert';
+
 
 @Component({
   selector: 'app-user-login',
@@ -27,7 +29,8 @@ export class UserLoginComponent {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private employeeService: EmployeeService
+    private employeeService: EmployeeService,
+
   ) {}
 
   ngOnInit() {
@@ -54,9 +57,12 @@ export class UserLoginComponent {
         .login(email, password, companyCode)
         .toPromise();
       this.router.navigateByUrl('/d');
+   
+
       if (this.rememberMe) {
         const loginData = { email, password, companyCode };
         localStorage.setItem('savedLogin', JSON.stringify(loginData));
+        ToastAlert.success('success')
       } else {
         localStorage.removeItem('savedLogin');
       }
@@ -65,6 +71,8 @@ export class UserLoginComponent {
     } finally {
       this.isLoading = false;
     }
+
+    
   }
 
   async sendEmail(loginData: any): Promise<void> {

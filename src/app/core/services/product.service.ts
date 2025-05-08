@@ -1,27 +1,21 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
-import { CategoryNode } from '../models/Category/categoryNode.model';
-import { CommonUtil } from '../../shared/utils/CommonUtil';
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { Product } from '../models/Products/product.model';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { catchError, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryService {
-
+export class ProductService {
   constructor(private http: HttpClient) {}
-  
-  getCategoryTree(usageType: string = 'Other'): Observable<CategoryNode[]> {
-    const url = environment.apiUrl + 'category/getCategoryTree/' + CommonUtil.getCurrentCompany() + (usageType ? '/' + usageType : '');
-    return this.http.get<CategoryNode[]>(url).pipe(catchError(this.handleError));
+  currentPath = 'products/';
+  getProductByCategoryIds(ids: string[]): Observable<Product[]> {
+    return this.http.post<Product[]>(environment.apiUrl + this.currentPath + 'findByCategories', ids).pipe(catchError(this.handleError));
   }
-  
+
 
   private handleError(errorRes: HttpErrorResponse) {
-    console.log('error message: ' + JSON.stringify(errorRes.error));
-
     let errorMessage = 'An unknown error occurred!';
     if (!errorRes) {
       return throwError(errorMessage);

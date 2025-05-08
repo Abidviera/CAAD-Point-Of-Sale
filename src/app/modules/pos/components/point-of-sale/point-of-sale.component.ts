@@ -372,6 +372,14 @@ export class PointOfSaleComponent {
   }
 
 
+  currentCategoryIds: string[] = [];
 
+  onCategorySelected(event: {node: any, parentNodes: any[]}) {
+    // Handle any additional logic when category is selected
+  }
+
+  onProductsRequested(ids: string[]) {
+    this.currentCategoryIds = ids;
+  }
   
 }

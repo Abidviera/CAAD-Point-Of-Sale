@@ -5,7 +5,10 @@
       <div class="secondNav"></div>
       <div class="parent-category">
         <div class="WEBPOS">
-          <app-category></app-category>
+          <app-category 
+        (categorySelected)="onCategorySelected($event)"
+        (productsRequested)="onProductsRequested($event)">
+      </app-category>
 
           <div
             class="row g-2 Content-Section"
@@ -36,15 +39,9 @@
                 'col-md-2': !withoutCustandPro
               }"
             >
-              <div
-                class="action-containerTheme2"
-                [ngClass]="{
-                  'action-containerWithoutcusPro': withoutCustandPro,
-                  'action-containerTheme2': !withoutCustandPro
-                }"
-              >
+          
                 <app-pos-order-type-buttons></app-pos-order-type-buttons>
-              </div>
+         
               <div
                 class="action-containerTheme2"
                 [ngClass]="{
@@ -67,7 +64,7 @@
                 '': !withoutCustandPro
               }"
             >
-              <app-products></app-products>
+              <app-products [categoryIds]="currentCategoryIds"></app-products>
             </div>
           </div>
         </div>
