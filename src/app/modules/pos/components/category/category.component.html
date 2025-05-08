@@ -1,0 +1,196 @@
+<!-- <label>
+    <input type="checkbox" [(ngModel)]="allowSubCategory" />
+    Allow Subcategory
+  </label>
+  <label>
+    <input type="checkbox" [(ngModel)]="withoutCustandPro" />
+    Hide Customer and Product
+  </label> -->
+
+<div [ngClass]="{ 'category-ContainerHide': withoutCustandPro, 'category-Container': !withoutCustandPro }">
+    <button class="nav-button left" *ngIf="allowSubCategory" (click)="scrollCategory(-800)"><i class="bi bi-chevron-left"></i></button>
+    <div class="category-section" #categorySection>
+      <div #categoryWithChild [ngClass]="allowSubCategory ? 'CategoryWithChild' : 'content'">
+        <div class="add-category-card" [routerLink]="['/form/category']">
+          <div class="add-category-icon">
+            <i class="bi bi-plus-lg"></i>
+          </div>
+          <span class="add-category-text">Add Category</span>
+        </div>
+        <div class="category-card" >
+          <img
+            src="../../../../assets/images/pos/buttongroup/add-image.png"
+           
+          />
+          <h5>Snacks</h5>
+        </div>
+        <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/add-image.png" />
+            <h5>Snacks</h5>
+          </div>
+        <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/add-image.png" />
+            <h5>Snacks</h5>
+          </div>
+        <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/add-image.png" />
+            <h5>Snacks</h5>
+          </div>
+        <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/add-image.png" />
+            <h5>Snacks</h5>
+          </div>
+        <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/add-image.png" />
+            <h5>Snacks</h5>
+          </div>
+        <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/add-image.png" />
+            <h5>Snacks</h5>
+          </div>
+        <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/add-image.png" />
+            <h5>Snacks</h5>
+          </div>
+        <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/add-image.png" />
+            <h5>Snacks</h5>
+          </div>
+        <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/add-image.png" />
+            <h5>Snacks</h5>
+          </div>
+        <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/add-image.png" />
+            <h5>Snacks</h5>
+          </div>
+          
+          <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/beverages.png" />
+            <h5>Beverages</h5>
+          </div>
+          
+          <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/fastfood.png" />
+            <h5>Fast Food</h5>
+          </div>
+          
+          <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/breakfast.png" />
+            <h5>Breakfast</h5>
+          </div>
+          
+          <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/desserts.png" />
+            <h5>Desserts</h5>
+          </div>
+          
+          <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/icecream.png" />
+            <h5>Ice Cream</h5>
+          </div>
+          
+          <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/soups.png" />
+            <h5>Soups</h5>
+          </div>
+          
+          <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/salads.png" />
+            <h5>Salads</h5>
+          </div>
+          
+          <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/noodles.png" />
+            <h5>Noodles</h5>
+          </div>
+          
+          <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/biryani.png" />
+            <h5>Biryani</h5>
+          </div>
+          
+          <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/rolls.png" />
+            <h5>Rolls</h5>
+          </div>
+          
+          <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/pizza.png" />
+            <h5>Pizza</h5>
+          </div>
+          
+          <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/burgers.png" />
+            <h5>Burgers</h5>
+          </div>
+          
+          <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/pasta.png" />
+            <h5>Pasta</h5>
+          </div>
+          
+          <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/sandwich.png" />
+            <h5>Sandwich</h5>
+          </div>
+          
+          <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/smoothie.png" />
+            <h5>Smoothies</h5>
+          </div>
+          
+          <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/tea.png" />
+            <h5>Tea</h5>
+          </div>
+          
+          <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/coffee.png" />
+            <h5>Coffee</h5>
+          </div>
+          
+          <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/cakes.png" />
+            <h5>Cakes</h5>
+          </div>
+          
+          <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/juices.png" />
+            <h5>Juices</h5>
+          </div>
+          
+          <div class="category-card">
+            <img src="../../../../assets/images/pos/buttongroup/milkshakes.png" />
+            <h5>Milkshakes</h5>
+          </div>
+          
+
+        <div class="loader" *ngIf="isCategoryLoading"></div>
+      </div>
+
+      <!-- <div class="child-categorysection" *ngIf="subCategories?.childrens.length > 0 && posSettings['allowsubcategory']">
+        <div class="child-category-container">
+          <div class="CategoryWithChild">
+            <div *ngFor="let child of subCategories?.childrens">
+              <div class="child-category-card" (click)="CategorySelected(child, subCategories?.childrens)">
+                <img
+                  src="{{ child.categoryImage ? child.categoryImage : '../../../../assets/images/pos/buttongroup/add-image.png' }}"
+                  *ngIf="posSettings['EnableCategoryImage'] && !child.hideImageFromPos"
+                />
+                <h5>{{ child.categoryName }}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+
+    <button class="nav-button right" *ngIf="allowSubCategory" (click)="scrollCategory(800)"><i class="bi bi-chevron-right"></i></button>
+    <button class="nav-button top" *ngIf="!allowSubCategory" (click)="scrollCategoryVertical(-100)">
+      <i class="bi bi-chevron-up"></i>
+    </button>
+    <button class="nav-button down" *ngIf="!allowSubCategory" (click)="scrollCategoryVertical(100)">
+      <i class="bi bi-chevron-down"></i>
+    </button>
+  </div>
