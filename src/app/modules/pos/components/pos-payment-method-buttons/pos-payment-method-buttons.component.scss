@@ -1,0 +1,1020 @@
+.action-containerUnderButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 9px;
+  margin-top: 10px;
+
+  .actionButtons2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-color: #feee00;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 11px;
+  }
+  .actionButtons2 img {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 3px;
+  }
+  .actionButtons2 span {
+    color: #333;
+  }
+
+  .actionButtons2:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+    background: linear-gradient(
+      135deg,
+      #ff5f6d,
+      #ffc3a0
+    ); /* Vibrant gradient on hover */
+    color: #fff;
+  }
+
+  .actionButtons2:hover img {
+    transform: scale(1.1);
+    width: 35px;
+    height: 35px;
+    filter: brightness(1.1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .actionButtons2:hover span {
+    color: #fff;
+  }
+
+  .actionButtons2:active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: #f0f0f0;
+  }
+
+  .icon-container2 {
+    display: flex;
+    gap: 8px;
+    justify-content: start;
+  }
+}
+
+// --------------------------------------------------------in POS Resolution-------------------------------------------------------------------------------
+
+@media (max-width: 1030px) and (min-width: 990px) {
+  .action-containerUnderButtons {
+    margin-bottom: 9px;
+    margin-top: 8px;
+
+    .actionButtons2 {
+      width: 54px;
+      height: 54px;
+      font-weight: 600;
+      font-size: 8px;
+    }
+    .actionButtons2 img {
+      width: 26px;
+      height: 26px;
+      margin-bottom: 3px;
+    }
+    .actionButtons2 span {
+      color: #333;
+    }
+
+    .actionButtons2:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+      background: linear-gradient(
+        135deg,
+        #ff5f6d,
+        #ffc3a0
+      ); /* Vibrant gradient on hover */
+      color: #fff;
+    }
+
+    .actionButtons2:hover img {
+      transform: scale(1.1);
+      width: 31px;
+      height: 31px;
+    }
+
+    .icon-container2 {
+      gap: 4px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+}
+
+// ------------------------------------- Styles for mobile screens */
+
+@media screen and (max-width: 600px) {
+  .action-containerUnderButtons {
+    margin-bottom: 0px;
+    margin-top: 10px;
+    width: 77% !important;
+
+    .ActionBtn-Section {
+      width: 100%;
+    }
+
+    .icon-container2 {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      justify-content: flex-start;
+      overflow-x: auto;
+      overflow-y: hidden;
+      width: 100%;
+    }
+
+    .actionButtons2 {
+      width: 67px;
+      height: 72px;
+      font-size: 11px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-shrink: 0;
+    }
+  }
+}
+
+// ========================================================
+
+$themes: (
+  Flamenco: (
+    Navbg: #fc8019,
+    NavColor: #ffffff,
+    LightBg: #fff8ed,
+    CategoryContainer: #fff8ed,
+    categorycard: #ffffff,
+    categorycardHover: #ffc072,
+    customerinfo: #ffffff,
+    GridCart: #ffc072,
+    GridCartBtnCustom: #fff8ed,
+    tableCOntainer: #ffefd4,
+    tableBorderline: #fd9b3a,
+    tableTag: #ffdba997,
+    qtybtnBoxshadow: 0 5px 15px rgba(255, 0, 0, 0.3),
+    ActionButton: linear-gradient(to right, #fc8019, #ed6109, #c4480a),
+    ActionButtonTextColor: white,
+    Border: #ffefd4,
+    ActionButtonHover: linear-gradient(to right, #ffb88c, #ff9a76, #ff7a5c),
+    childCategory: #fff8ed,
+    MobileContentColor: #ffdba9,
+    loaderPrimaryColor: #fd9b3a,
+    loaderSecondaryColor: #fd9b3a50,
+  ),
+
+  DayTheme: (
+    Navbg: rgba(41, 112, 255, 1),
+    NavColor: #ffffff,
+    Border: #c8c8c868,
+    tableBorderline: rgba(41, 112, 255, 0.792),
+    childCategory: #f8f9fa,
+    QtyBtnBoxShadow: 0 5px 15px rgba(41, 112, 255, 0.509),
+    MobileContentColor: #bcd8ff,
+    loaderPrimaryColor: #8ec0ff,
+    loaderSecondaryColor: #8ec0ff50,
+  ),
+  modern-midnight: (
+    Navbg: #2c3e50,
+    NavColor: #ffffff,
+    LightBg: #f5f6fa,
+    CategoryContainer: #f5f6fa,
+    categorycard: #ffffff,
+    categorycardHover: #3498db,
+    customerinfo: #ffffff,
+    GridCart: #3498db,
+    GridCartBtnCustom: #f5f6fa,
+    tableCOntainer: #ecf0f1,
+    tableBorderline: #bdc3c7,
+    tableTag: #2c3e502c,
+    qtybtnBoxshadow: 0 5px 15px rgba(52, 152, 219, 0.3),
+    ActionButton: linear-gradient(to right, #2c3e50, #34495e, #2c3e50),
+    ActionButtonTextColor: white,
+    Border: #dfe6e9,
+    ActionButtonHover: linear-gradient(to right, #3498db, #2980b9, #3498db),
+    childCategory: #f5f7fa,
+    MobileContentColor: #cfdce8,
+    loaderPrimaryColor: #a6bfd3,
+    loaderSecondaryColor: #a6bfd350,
+  ),
+  modern-crimson: (
+    Navbg: rgba(230, 57, 70, 1),
+    NavColor: #ffffff,
+    LightBg: #f9f9f9,
+    CategoryContainer: #f9f9f9,
+    CategoryCard: #ffffff,
+    CategoryCardHover: rgba(230, 57, 70, 0.1),
+    CustomerInfo: #ffffff,
+    GridCart: rgba(230, 57, 70, 1),
+    GridCartBtnCustom: #f9f9f9,
+    TableContainer: #ffffff,
+    TableBorderline: rgba(230, 57, 70, 0.3),
+    TableTag: rgba(230, 57, 70, 0.1),
+    QtyBtnBoxShadow: 0 5px 15px rgba(230, 57, 70, 0.3),
+    ActionButton:
+      linear-gradient(to right, rgba(230, 57, 70, 1), rgba(200, 40, 50, 1)),
+    ActionButtonTextColor: white,
+    Border: rgba(230, 57, 70, 0.2),
+    ActionButtonHover:
+      linear-gradient(to right, rgba(255, 100, 100, 1), rgba(230, 57, 70, 1)),
+    childCategory: #fef2f3,
+    MobileContentColor: #fcccd0,
+    loaderPrimaryColor: #f08080,
+    loaderSecondaryColor: #f0808050,
+  ),
+  oceanic-breeze: (
+    Navbg: #1abc9c,
+    NavColor: #ffffff,
+    LightBg: #e8f8f5,
+    CategoryContainer: #e8f8f5,
+    categorycard: #ffffff,
+    categorycardHover: #76d7c4,
+    customerinfo: #ffffff,
+    GridCart: #76d7c4,
+    GridCartBtnCustom: #e8f8f5,
+    tableCOntainer: #d1f2eb,
+    tableBorderline: #48c9b0,
+    tableTag: #a3e4d7,
+    qtybtnBoxshadow: 0 5px 15px rgba(26, 188, 156, 0.3),
+    ActionButton: linear-gradient(to right, #1abc9c, #16a085, #1abc9c),
+    ActionButtonTextColor: white,
+    Border: #d1f2eb,
+    ActionButtonHover: linear-gradient(to right, #76d7c4, #48c9b0, #76d7c4),
+    childCategory: #f0fdf9,
+    MobileContentColor: #9cf3da,
+    loaderPrimaryColor: #62e6c5,
+    loaderSecondaryColor: #62e6c550,
+  ),
+  sunset-glow: (
+    Navbg: #e67e22,
+    NavColor: #ffffff,
+    LightBg: #fef5e7,
+    CategoryContainer: #fef5e7,
+    categorycard: #ffffff,
+    categorycardHover: #f8c471,
+    customerinfo: #ffffff,
+    GridCart: #f8c471,
+    GridCartBtnCustom: #fef5e7,
+    tableCOntainer: #fdebd0,
+    tableBorderline: #f39c12,
+    tableTag: #f5b041,
+    qtybtnBoxshadow: 0 5px 15px rgba(230, 126, 34, 0.3),
+    ActionButton: linear-gradient(to right, #e67e22, #d35400, #e67e22),
+    ActionButtonTextColor: white,
+    Border: #fdebd0,
+    ActionButtonHover: linear-gradient(to right, #f8c471, #f39c12, #f8c471),
+    childCategory: #fef7ec,
+    MobileContentColor: #f5d192,
+    loaderPrimaryColor: #f0b559,
+    loaderSecondaryColor: #f0b55950,
+  ),
+  lavender-dream: (
+    Navbg: #9b59b6,
+    NavColor: #ffffff,
+    LightBg: #f5eef8,
+    CategoryContainer: #f5eef8,
+    categorycard: #ffffff,
+    categorycardHover: #c39bd3,
+    customerinfo: #ffffff,
+    GridCart: #c39bd3,
+    GridCartBtnCustom: #f5eef8,
+    tableCOntainer: #e8daef,
+    tableBorderline: #8e44ad,
+    tableTag: #bb8fce,
+    qtybtnBoxshadow: 0 5px 15px rgba(155, 89, 182, 0.3),
+    ActionButton: linear-gradient(to right, #9b59b6, #8e44ad, #9b59b6),
+    ActionButtonTextColor: white,
+    Border: #e8daef,
+    ActionButtonHover: linear-gradient(to right, #c39bd3, #9b59b6, #c39bd3),
+    childCategory: #faf6fd,
+    MobileContentColor: #eadaf4,
+    loaderPrimaryColor: #dbbdea,
+    loaderSecondaryColor: #dbbdea50,
+  ),
+  arctic-ice: (
+    Navbg: #3498db,
+    NavColor: #ffffff,
+    LightBg: #ebf5fb,
+    CategoryContainer: #ebf5fb,
+    categorycard: #ffffff,
+    categorycardHover: #85c1e9,
+    customerinfo: #ffffff,
+    GridCart: #85c1e9,
+    GridCartBtnCustom: #ebf5fb,
+    tableCOntainer: #d6eaf8,
+    tableBorderline: #2e86c1,
+    tableTag: #aed6f1,
+    qtybtnBoxshadow: 0 5px 15px rgba(52, 152, 219, 0.3),
+    ActionButton: linear-gradient(to right, #3498db, #2e86c1, #3498db),
+    ActionButtonTextColor: white,
+    Border: #d6eaf8,
+    ActionButtonHover: linear-gradient(to right, #85c1e9, #5dade2, #85c1e9),
+    childCategory: #f2f8fd,
+    MobileContentColor: #c1dff6,
+    loaderPrimaryColor: #8ac5ef,
+    loaderSecondaryColor: #8ac5ef50,
+  ),
+  golden-sunrise: (
+    Navbg: #f1c40f,
+    NavColor: #ffffff,
+    LightBg: #fef9e7,
+    CategoryContainer: #fef9e7,
+    categorycard: #ffffff,
+    categorycardHover: #f7dc6f,
+    customerinfo: #ffffff,
+    GridCart: #f7dc6f,
+    GridCartBtnCustom: #fef9e7,
+    tableCOntainer: #fcf3cf,
+    tableBorderline: #f39c12,
+    tableTag: #f4d03f,
+    qtybtnBoxshadow: 0 5px 15px rgba(241, 196, 15, 0.3),
+    ActionButton: linear-gradient(to right, #f1c40f, #f39c12, #f1c40f),
+    ActionButtonTextColor: white,
+    Border: #fcf3cf,
+    ActionButtonHover: linear-gradient(to right, #f7dc6f, #f4d03f, #f7dc6f),
+    childCategory: #fdfde9,
+    MobileContentColor: #fbf38d,
+    loaderPrimaryColor: #f9e54b,
+    loaderSecondaryColor: #f9e54b50,
+  ),
+  emerald-envy: (
+    Navbg: #2ecc71,
+    NavColor: #ffffff,
+    LightBg: #e8f6f3,
+    CategoryContainer: #e8f6f3,
+    categorycard: #ffffff,
+    categorycardHover: #58d68d,
+    customerinfo: #ffffff,
+    GridCart: #58d68d,
+    GridCartBtnCustom: #e8f6f3,
+    tableCOntainer: #d5f5e3,
+    tableBorderline: #27ae60,
+    tableTag: #82e0aa,
+    qtybtnBoxshadow: 0 5px 15px rgba(46, 204, 113, 0.3),
+    ActionButton: linear-gradient(to right, #2ecc71, #27ae60, #2ecc71),
+    ActionButtonTextColor: white,
+    Border: #d5f5e3,
+    ActionButtonHover: linear-gradient(to right, #58d68d, #2ecc71, #58d68d),
+    childCategory: #f1fcf5,
+    MobileContentColor: #bef4d4,
+    loaderPrimaryColor: #8beab3,
+    loaderSecondaryColor: #8beab350,
+  ),
+
+  coral-bliss: (
+    Navbg: #ff6f61,
+    NavColor: #ffffff,
+    LightBg: #fff5f4,
+    CategoryContainer: #fff5f4,
+    categorycard: #ffffff,
+    categorycardHover: #ff9a8a,
+    customerinfo: #ffffff,
+    GridCart: #ff9a8a,
+    GridCartBtnCustom: #fff5f4,
+    tableCOntainer: #ffe5e2,
+    tableBorderline: #ff4a3a,
+    tableTag: #ffc4bc,
+    qtybtnBoxshadow: 0 5px 15px rgba(255, 111, 97, 0.3),
+    ActionButton: linear-gradient(to right, #ff6f61, #ff4a3a, #ff6f61),
+    ActionButtonTextColor: white,
+    Border: #ffe5e2,
+    ActionButtonHover: linear-gradient(to right, #ff9a8a, #ff6f61, #ff9a8a),
+    childCategory: #fff2f1,
+    MobileContentColor: #ffccc7,
+    loaderPrimaryColor: #ffa8a0,
+    loaderSecondaryColor: #ffa8a050,
+  ),
+
+  royal-amethyst: (
+    Navbg: #8e44ad,
+    NavColor: #ffffff,
+    LightBg: #f4ecf7,
+    CategoryContainer: #f4ecf7,
+    categorycard: #ffffff,
+    categorycardHover: #af7ac5,
+    customerinfo: #ffffff,
+    GridCart: #af7ac5,
+    GridCartBtnCustom: #f4ecf7,
+    tableCOntainer: #e8daef,
+    tableBorderline: #7d3c98,
+    tableTag: #c39bd3,
+    qtybtnBoxshadow: 0 5px 15px rgba(142, 68, 173, 0.3),
+    ActionButton: linear-gradient(to right, #8e44ad, #7d3c98, #8e44ad),
+    ActionButtonTextColor: white,
+    Border: #e8daef,
+    ActionButtonHover: linear-gradient(to right, #af7ac5, #8e44ad, #af7ac5),
+    childCategory: #fbf6fd,
+    MobileContentColor: #ebd9f5,
+    loaderPrimaryColor: #dcbaed,
+    loaderSecondaryColor: #dcbaed50,
+  ),
+
+  sapphire-sky: (
+    Navbg: #3498db,
+    NavColor: #ffffff,
+    LightBg: #ebf5fb,
+    CategoryContainer: #ebf5fb,
+    categorycard: #ffffff,
+    categorycardHover: #5dade2,
+    customerinfo: #ffffff,
+    GridCart: #5dade2,
+    GridCartBtnCustom: #ebf5fb,
+    tableCOntainer: #d6eaf8,
+    tableBorderline: #2e86c1,
+    tableTag: #aed6f1,
+    qtybtnBoxshadow: 0 5px 15px rgba(52, 152, 219, 0.3),
+    ActionButton: linear-gradient(to right, #3498db, #2e86c1, #3498db),
+    ActionButtonTextColor: white,
+    Border: #d6eaf8,
+    ActionButtonHover: linear-gradient(to right, #5dade2, #3498db, #5dade2),
+    childCategory: #f2f8fd,
+    MobileContentColor: #c1dff6,
+    loaderPrimaryColor: #8ac5ef,
+    loaderSecondaryColor: #8ac5ef50,
+  ),
+
+  golden-haze: (
+    Navbg: #f39c12,
+    NavColor: #ffffff,
+    LightBg: #fef5e7,
+    CategoryContainer: #fef5e7,
+    categorycard: #ffffff,
+    categorycardHover: #f8c471,
+    customerinfo: #ffffff,
+    GridCart: #f8c471,
+    GridCartBtnCustom: #fef5e7,
+    tableCOntainer: #fdebd0,
+    tableBorderline: #e67e22,
+    tableTag: #f5b041,
+    qtybtnBoxshadow: 0 5px 15px rgba(243, 156, 18, 0.3),
+    ActionButton: linear-gradient(to right, #f39c12, #e67e22, #f39c12),
+    ActionButtonTextColor: white,
+    Border: #fdebd0,
+    ActionButtonHover: linear-gradient(to right, #f8c471, #f39c12, #f8c471),
+    childCategory: #fffbeb,
+    MobileContentColor: #fce38b,
+    loaderPrimaryColor: #facf4f,
+    loaderSecondaryColor: #facf4f50,
+  ),
+
+  rose-quartz: (
+    Navbg: #f78fb3,
+    NavColor: #ffffff,
+    LightBg: #fff0f5,
+    CategoryContainer: #fff0f5,
+    categorycard: #ffffff,
+    categorycardHover: #f8a5c2,
+    customerinfo: #ffffff,
+    GridCart: #f8a5c2,
+    GridCartBtnCustom: #fff0f5,
+    tableCOntainer: #ffdde1,
+    tableBorderline: #f06292,
+    tableTag: #ffb3c1,
+    qtybtnBoxshadow: 0 5px 15px rgba(247, 143, 179, 0.3),
+    ActionButton: linear-gradient(to right, #f78fb3, #f06292, #f78fb3),
+    ActionButtonTextColor: white,
+    Border: #ffdde1,
+    ActionButtonHover: linear-gradient(to right, #f8a5c2, #f78fb3, #f8a5c2),
+    childCategory: #fdf2f6,
+    MobileContentColor: #fbcfdf,
+    loaderPrimaryColor: #f78fb3,
+    loaderSecondaryColor: #f78fb350,
+  ),
+
+  midnight-forest: (
+    Navbg: #2c3e50,
+    NavColor: #ffffff,
+    LightBg: #ecf0f1,
+    CategoryContainer: #ecf0f1,
+    categorycard: #ffffff,
+    categorycardHover: #34495e,
+    customerinfo: #ffffff,
+    GridCart: #34495e,
+    GridCartBtnCustom: #ecf0f1,
+    tableCOntainer: #dfe6e9,
+    tableBorderline: #2c3e50,
+    tableTag: #bdc3c7,
+    qtybtnBoxshadow: 0 5px 15px rgba(44, 62, 80, 0.3),
+    ActionButton: linear-gradient(to right, #2c3e50, #34495e, #2c3e50),
+    ActionButtonTextColor: white,
+    Border: #dfe6e9,
+    ActionButtonHover: linear-gradient(to right, #34495e, #2c3e50, #34495e),
+    childCategory: #f5f7fa,
+    MobileContentColor: #cfdce8,
+    loaderPrimaryColor: #a6bfd3,
+    loaderSecondaryColor: #a6bfd350,
+  ),
+
+  peach-sorbet: (
+    Navbg: #ff9a8a,
+    NavColor: #ffffff,
+    LightBg: #fff5f4,
+    CategoryContainer: #fff5f4,
+    categorycard: #ffffff,
+    categorycardHover: #ffc4bc,
+    customerinfo: #ffffff,
+    GridCart: #ffc4bc,
+    GridCartBtnCustom: #fff5f4,
+    tableCOntainer: #ffe5e2,
+    tableBorderline: #ff6f61,
+    tableTag: #ffd5d1,
+    qtybtnBoxshadow: 0 5px 15px rgba(255, 154, 138, 0.3),
+    ActionButton: linear-gradient(to right, #ff9a8a, #ff6f61, #ff9a8a),
+    ActionButtonTextColor: white,
+    Border: #ffe5e2,
+    ActionButtonHover: linear-gradient(to right, #ffc4bc, #ff9a8a, #ffc4bc),
+    childCategory: #fef4f2,
+    MobileContentColor: #ffd0c8,
+    loaderPrimaryColor: #ff9a8a,
+    loaderSecondaryColor: #ff9a8a50,
+  ),
+
+  electric-violet: (
+    Navbg: #8a2be2,
+    NavColor: #ffffff,
+    LightBg: #f3e8ff,
+    CategoryContainer: #f3e8ff,
+    categorycard: #ffffff,
+    categorycardHover: #a45de5,
+    customerinfo: #ffffff,
+    GridCart: #a45de5,
+    GridCartBtnCustom: #f3e8ff,
+    tableCOntainer: #e9d5ff,
+    tableBorderline: #7b1fa2,
+    tableTag: #c792e6,
+    qtybtnBoxshadow: 0 5px 15px rgba(138, 43, 226, 0.3),
+    ActionButton: linear-gradient(to right, #8a2be2, #7b1fa2, #8a2be2),
+    ActionButtonTextColor: white,
+    Border: #e9d5ff,
+    ActionButtonHover: linear-gradient(to right, #a45de5, #8a2be2, #a45de5),
+    childCategory: #faf5ff,
+    MobileContentColor: #e9d6fe,
+    loaderPrimaryColor: #d8b6fc,
+    loaderSecondaryColor: #d8b6fc50,
+  ),
+
+  sunset-dusk: (
+    Navbg: #e74c3c,
+    NavColor: #ffffff,
+    LightBg: #fdedec,
+    CategoryContainer: #fdedec,
+    categorycard: #ffffff,
+    categorycardHover: #ec7063,
+    customerinfo: #ffffff,
+    GridCart: #ec7063,
+    GridCartBtnCustom: #fdedec,
+    tableCOntainer: #fadbd8,
+    tableBorderline: #c0392b,
+    tableTag: #f1948a,
+    qtybtnBoxshadow: 0 5px 15px rgba(231, 76, 60, 0.3),
+    ActionButton: linear-gradient(to right, #e74c3c, #c0392b, #e74c3c),
+    ActionButtonTextColor: white,
+    Border: #fadbd8,
+    ActionButtonHover: linear-gradient(to right, #ec7063, #e74c3c, #ec7063),
+    childCategory: #fef3f2,
+    MobileContentColor: #fcd0cc,
+    loaderPrimaryColor: #f9b0a8,
+    loaderSecondaryColor: #f9b0a850,
+  ),
+);
+
+@each $theme, $colors in $themes {
+  .#{$theme} {
+    .loader:before {
+      content: "";
+
+      background: map-get($colors, loaderSecondaryColor);
+    }
+
+    .loader:after {
+      content: "";
+
+      background: map-get($colors, loaderPrimaryColor);
+    }
+
+    .navbar {
+      background-color: map-get($colors, Navbg);
+      color: map-get($colors, NavColor);
+
+      .logo {
+        color: map-get($colors, NavColor);
+      }
+
+      .subtitle {
+        color: map-get($colors, NavColor);
+      }
+
+      .navbar-text {
+        color: map-get($colors, NavColor);
+      }
+
+      .home-text {
+        color: map-get($colors, NavColor);
+      }
+
+      .navbar-text:not(:last-child)::after {
+        background-color: map-get($colors, NavColor);
+      }
+    }
+
+    .secondSection {
+      .secondNav {
+        background-color: map-get($colors, Navbg);
+      }
+
+      .nav-button {
+        background-color: map-get($colors, Navbg);
+        box-shadow: map-get($colors, qtybtnBoxshadow);
+      }
+
+      .nav-button:hover {
+        box-shadow: map-get($colors, qtybtnBoxshadow);
+      }
+
+      .category-Container {
+        background-color: map-get($colors, CategoryContainer);
+      }
+      .category-card {
+        background-color: map-get($colors, categorycard);
+      }
+
+      .category-card:hover {
+        background-color: map-get($colors, categorycardHover);
+      }
+
+      .child-category-container {
+        border-left: 6px solid map-get($colors, Navbg);
+        // background-color: map-get($colors, childCategory);
+      }
+
+      .child-category-card {
+        box-shadow: map-get($colors, qtybtnBoxshadow);
+      }
+
+      .add-category-card {
+        border: 2px dashed map-get($colors, Navbg);
+      }
+
+      .add-category-icon {
+        background-color: map-get($colors, Navbg);
+      }
+
+      .add-category-text {
+        color: map-get($colors, Navbg);
+      }
+
+      .content {
+        @media (max-width: 600px) {
+          background-color: map-get($colors, MobileContentColor);
+        }
+      }
+      .CategoryWithChild {
+        @media (max-width: 600px) {
+          background-color: map-get($colors, MobileContentColor);
+        }
+      }
+    }
+
+    .customer-info {
+      // background-color: map-get($colors, LightBg);
+      border: 1px solid map-get($colors, Border);
+
+      .custom-input {
+        border: 1px solid #e0e0e0;
+        &:hover {
+          border-color: map-get($colors, Navbg);
+        }
+
+        .input-group-text2 {
+          background-color: #ffffff !important;
+        }
+        .input-group-text {
+          background: #f8f9fa;
+
+          i {
+            color: map-get($colors, Navbg);
+          }
+        }
+      }
+    }
+    .customer-infoTheme2 {
+      //background-color: map-get($colors, LightBg);
+      border: 1px solid map-get($colors, Border);
+
+      .custom-input {
+        border: 1px solid #e0e0e0;
+        &:hover {
+          border-color: map-get($colors, Navbg);
+        }
+
+        .input-group-text2 {
+          background-color: #ffffff !important;
+        }
+        .input-group-text {
+          background: #f8f9fa;
+
+          i {
+            color: map-get($colors, Navbg);
+          }
+        }
+      }
+    }
+
+    .Grid-CartWithCusPro {
+      border: 1px solid map-get($colors, Border);
+      .btn-custom:hover {
+        background: map-get($colors, GridCartBtnCustom);
+
+        .broom {
+          color: map-get($colors, Navbg);
+        }
+
+        .fa-hand-paper-o {
+          color: map-get($colors, Navbg);
+        }
+      }
+
+      .tendchange-card {
+        input {
+          border: 1px solid map-get($colors, Navbg);
+          background: map-get($colors, GridCartBtnCustom);
+          color: map-get($colors, Navbg);
+        }
+
+        input::placeholder {
+          color: map-get($colors, Navbg);
+        }
+
+        input:focus {
+          border-color: map-get($colors, Navbg);
+          box-shadow: map-get($colors, qtybtnBoxshadow);
+          background: map-get($colors, GridCartBtnCustom);
+        }
+      }
+    }
+    .Grid-Cart {
+      border: 1px solid map-get($colors, Border);
+      .btn-custom:hover {
+        background: map-get($colors, GridCartBtnCustom);
+
+        .broom {
+          color: map-get($colors, Navbg);
+        }
+
+        .fa-hand-paper-o {
+          color: map-get($colors, Navbg);
+        }
+      }
+
+      .tendchange-card {
+        input {
+          border: 1px solid map-get($colors, Navbg);
+          background: map-get($colors, GridCartBtnCustom);
+          color: map-get($colors, Navbg);
+        }
+
+        input::placeholder {
+          color: map-get($colors, Navbg);
+        }
+
+        input:focus {
+          border-color: map-get($colors, Navbg);
+          box-shadow: map-get($colors, qtybtnBoxshadow);
+          background: map-get($colors, GridCartBtnCustom);
+        }
+      }
+    }
+
+    .table-container {
+      background-color: map-get($colors, tableCOntainer);
+    }
+
+    .product-tablewithCatPro {
+      background-color: map-get($colors, tableCOntainer);
+
+      .table-row:hover {
+        background-color: map-get($colors, GridCartBtnCustom);
+
+        td {
+          background-color: map-get($colors, tableCOntainer);
+        }
+      }
+
+      .tag {
+        border: 1px solid map-get($colors, Navbg);
+        background-color: map-get($colors, tableTag);
+      }
+
+      .qty-btn {
+        background: map-get($colors, Navbg);
+        box-shadow: map-get($colors, qtybtnBoxshadow);
+      }
+
+      .qty-btn:hover {
+        background: map-get($colors, Navbg);
+        box-shadow: map-get($colors, qtybtnBoxshadow);
+      }
+
+      .qty-btn:active {
+        box-shadow: map-get($colors, qtybtnBoxshadow);
+      }
+
+      .quantity {
+        color: #000000;
+      }
+
+      .delete-btn {
+        background: #ff5c5c;
+      }
+
+      tfoot {
+        border-top: 1px solid map-get($colors, tableBorderline);
+
+        .netAmount {
+          color: map-get($colors, Navbg);
+        }
+      }
+    }
+
+    .product-tablewithCatPro th {
+      background-color: map-get($colors, tableCOntainer);
+      color: map-get($colors, Navbg);
+      border-bottom: 1px solid map-get($colors, tableBorderline);
+    }
+    .product-tablewithCatPro td {
+      background-color: map-get($colors, tableCOntainer);
+    }
+
+    .product-table {
+      background-color: map-get($colors, tableCOntainer);
+
+      .table-row:hover {
+        background-color: map-get($colors, GridCartBtnCustom);
+
+        td {
+          background-color: map-get($colors, tableCOntainer);
+        }
+      }
+
+      .tag {
+        border: 1px solid map-get($colors, Navbg);
+        background-color: map-get($colors, tableTag);
+      }
+
+      .qty-btn {
+        background: map-get($colors, Navbg);
+        box-shadow: map-get($colors, qtybtnBoxshadow);
+      }
+
+      .qty-btn:hover {
+        background: map-get($colors, Navbg);
+        box-shadow: map-get($colors, qtybtnBoxshadow);
+      }
+
+      .qty-btn:active {
+        box-shadow: map-get($colors, qtybtnBoxshadow);
+      }
+
+      .quantity {
+        color: #000000;
+      }
+
+      .delete-btn {
+        background: #ff5c5c;
+      }
+
+      tfoot {
+        border-top: 1px solid map-get($colors, tableBorderline);
+
+        .netAmount {
+          color: map-get($colors, Navbg);
+        }
+      }
+    }
+
+    .product-table th {
+      background-color: map-get($colors, tableCOntainer);
+      color: map-get($colors, Navbg);
+      border-bottom: 1px solid map-get($colors, tableBorderline);
+    }
+    .product-table td {
+      background-color: map-get($colors, tableCOntainer);
+    }
+
+    .action-containerTheme2 {
+      background-color: rgb(255, 255, 255);
+
+      .ActionBtn-Section {
+        .actionButtons {
+          background: map-get($colors, ActionButton);
+        }
+
+        .actionButtons span {
+          color: map-get($colors, ActionButtonTextColor);
+        }
+
+        .actionButtons:hover {
+          background: map-get($colors, ActionButtonHover);
+          color: map-get($colors, ActionButtonTextColor);
+        }
+      }
+    }
+    .action-containerWithoutcusPro {
+      background-color: rgb(255, 255, 255);
+
+      .ActionBtn-Section {
+        .actionButtons {
+          background: map-get($colors, ActionButton);
+        }
+
+        .actionButtons span {
+          color: map-get($colors, ActionButtonTextColor);
+        }
+
+        .actionButtons:hover {
+          background: map-get($colors, ActionButtonHover);
+          color: map-get($colors, ActionButtonTextColor);
+        }
+      }
+    }
+
+    .action-containerUnderButtons {
+      background-color: rgb(255, 255, 255);
+
+      .actionButtons2 {
+        background: map-get($colors, ActionButton);
+      }
+
+      .actionButtons2 span {
+        color: map-get($colors, ActionButtonTextColor);
+      }
+
+      .actionButtons2:hover {
+        background: map-get($colors, ActionButtonHover);
+        color: map-get($colors, ActionButtonTextColor);
+      }
+    }
+
+    .Products-Container {
+      border: 1px solid map-get($colors, Border);
+      background-color: map-get($colors, CategoryContainer);
+
+      .productHeader {
+        .add-item-btn {
+          background: map-get($colors, Navbg);
+        }
+
+        .add-item-btn:hover {
+          background: map-get($colors, Navbg);
+        }
+      }
+
+      .product-card:hover {
+        .product-name {
+          color: map-get($colors, Navbg);
+        }
+      }
+      .product-price {
+        font-size: 12px;
+        font-weight: 500;
+        color: map-get($colors, Navbg);
+      }
+    }
+
+    .actionButtonsUnderButtonsSection2 {
+      background: map-get($colors, ActionButton);
+    }
+
+    .actionButtonsUnderButtonsSection2 span {
+      color: map-get($colors, ActionButtonTextColor);
+    }
+
+    .actionButtonsUnderButtonsSection2:hover {
+      background: map-get($colors, ActionButtonHover);
+      color: map-get($colors, ActionButtonTextColor);
+    }
+
+    .sidePanel-theme-selector {
+      .sidePanel-toggle {
+        .toggle-icon-wrapper {
+          i {
+            color: map-get($colors, Navbg);
+          }
+        }
+      }
+    }
+  }
+}

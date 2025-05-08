@@ -1,0 +1,151 @@
+<div
+class="Grid-Cart mt-2"
+[ngClass]="{ 'Grid-Cart': withoutCustandPro, 'Grid-CartWithCusPro': !withoutCustandPro }"
+*ngIf="!isMobileView || selectedTab === 1"
+>
+<div class="order-actions">
+  <div>
+    <span class="fw-bold"> <i class="fa-solid fa-bookmark"></i> Order Details </span>
+  </div>
+
+  <div class="d-flex">
+    <button class="btn-custom me-2"><img src="PointOfSale/Grid/broom.png" class="broom" alt="" /> Clear Orders</button>
+
+    <button class="btn-custom"><i class="fa fa-hand-paper-o" aria-hidden="true"></i> Hold</button>
+  </div>
+</div>
+
+<div class="table-container">
+  <table class="product-table" [ngClass]="{ 'product-table': withoutCustandPro, 'product-tablewithCatPro': !withoutCustandPro }">
+    <thead>
+      <tr>
+        <th>Sno</th>
+        <th>Product Name</th>
+        <th>{{ QuantityheaderText }}</th>
+        <th class="PriceColumn">Price</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-row">
+        <td>1</td>
+        <td>
+          <div class="d-flex">
+            <!-- <img src="../../../assets/images/img1.jpg" alt="Coffee" class="product-image" /> -->
+            <div class="details ms-2">
+              <h3>French Vanilla Fantasy</h3>
+              <div class="tags">
+                <span class="tag"> (Disc: 2%) (Tax: 5%)</span>
+              </div>
+            </div>
+          </div>
+        </td>
+
+        <td>
+          <div class="product-actions">
+            <div class="quantity-control">
+              <button class="qty-btn decrease"><i class="bi bi-dash"></i></button>
+              <span class="quantity">2</span>
+              <button class="qty-btn increase"><i class="bi bi-plus"></i></button>
+            </div>
+          </div>
+        </td>
+
+        <td class="PriceColumn"><span class="product-price">$12.83</span></td>
+        <td>
+          <div class="product-Total">
+            $12.83
+
+            <i class="bi bi-x-circle-fill text-danger"></i>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-row">
+        <td>1</td>
+        <td>
+          <div class="d-flex">
+            <!-- <img src="../../../assets/images/img1.jpg" alt="Coffee" class="product-image" /> -->
+            <div class="details ms-2">
+              <h3>French Vanilla Fantasy</h3>
+              <div class="tags">
+                <span class="tag"> (Disc: 2%) (Tax: 5%)</span>
+              </div>
+            </div>
+          </div>
+        </td>
+
+        <td>
+          <div class="product-actions">
+            <div class="quantity-control">
+              <button class="qty-btn decrease"><i class="bi bi-dash"></i></button>
+              <span class="quantity">2</span>
+              <button class="qty-btn increase"><i class="bi bi-plus"></i></button>
+            </div>
+          </div>
+        </td>
+
+        <td class="PriceColumn"><span class="product-price">$12.83</span></td>
+        <td>
+          <div class="product-Total">
+            $12.83
+
+            <i class="bi bi-x-circle-fill text-danger"></i>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-row">
+        <td>1</td>
+        <td>
+          <div class="d-flex">
+            <!-- <img src="../../../assets/images/img1.jpg" alt="Coffee" class="product-image" /> -->
+            <div class="details ms-2">
+              <h3>French Vanilla Fantasy</h3>
+              <div class="tags">
+                <span class="tag"> (Disc: 2%) (Tax: 5%)</span>
+              </div>
+            </div>
+          </div>
+        </td>
+
+        <td>
+          <div class="product-actions">
+            <div class="quantity-control">
+              <button class="qty-btn decrease"><i class="bi bi-dash"></i></button>
+              <span class="quantity">2</span>
+              <button class="qty-btn increase"><i class="bi bi-plus"></i></button>
+            </div>
+          </div>
+        </td>
+
+        <td class="PriceColumn"><span class="product-price">$12.83</span></td>
+        <td>
+          <div class="product-Total">
+            $12.83
+
+            <i class="bi bi-x-circle-fill text-danger"></i>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="5">
+          <div class="footer">
+            <span>Items: 6</span>
+            <span>QTY: 8</span>
+            <span class="GRSAmount">GRS Amt: 800.00</span>
+            <span class="Discount">DISC: 40.00</span>
+            <span class="Tax">TAX: 38.00</span>
+            <span class="netAmount">Net Amt: 760.00</span>
+          </div>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<div class="tendchange-card">
+  <input type="number" id="tenderedAmount" placeholder="Enter tendered amount" />
+  <div class="result" id="changeAmount">Change: 12.55</div>
+</div>
+</div>
