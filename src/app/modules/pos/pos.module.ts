@@ -12,6 +12,7 @@ import { PosOrderTypeButtonsComponent } from './components/pos-order-type-button
 import { PosOrderActionButtonsComponent } from './components/pos-order-action-buttons/pos-order-action-buttons.component';
 import { ProductsComponent } from './components/products/products.component';
 import { CustomerInfoComponent } from './components/customer-info/customer-info.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CustomerInfoComponent } from './components/customer-info/customer-info.
     CommonModule,
     POSRoutingModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ]
 })
 export class POSModule { }

@@ -9,8 +9,11 @@ import { CategoryNode } from '../../../../core/models/Category/categoryNode.mode
 import { CategoryService } from '../../../../core/services/category.service';
 import { ToastAlert } from '../../../../shared/alert/toast.alert';
 import { Product } from '../../../../core/models/Products/product.model';
-import { Observable } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
 import { ProductService } from '../../../../core/services/product.service';
+import { Settings } from '../../../../core/models/settings/settings.model';
+import { SettingsService } from '../../../../core/services/settings.service';
+import { ledger } from '../../../../core/models/ledger.model';
 
 @Component({
   selector: 'app-category',
@@ -44,12 +47,14 @@ export class CategoryComponent {
 
   constructor(
     private categoryService: CategoryService,
-    private productService: ProductService
+    private productService: ProductService,
+    private settingService: SettingsService,
   ) {}
 
   async ngOnInit() {
     this.getCategoryTree();
     // this.loadProducts();
+      this.findAllSettings();
   }
 
 
@@ -136,5 +141,34 @@ export class CategoryComponent {
     return selected;
   }
 
+   isLoading = false;
+allSettings: Settings[];
+   async findAllSettings() {
+    this.allSettings = [];
+    this.isLoading = true;
+    const posSettings$ = this.settingService.findAll('POS');
+    console.log("settings"+ posSettings$)
+    const salesSettings$ = this.settingService.findAll('Sales');
+    const printsSettings$ = this.settingService.findAll('Print');
+    const kotsSettings$ = this.settingService.findAll('Kot');
+    const purchasesSettings$ = this.settingService.findAll('Purchase');
+
+    forkJoin([posSettings$, salesSettings$, printsSettings$, kotsSettings$, purchasesSettings$]).subscribe(
+      ([posRes, salesRes, printsRes, kotsRes, purchasesRes]) => {
+        this.allSettings.push(...posRes, ...salesRes, ...printsRes, ...kotsRes, ...purchasesRes);
+        this.posSettingsSet();
+    
+      console.log(this.allSettings)
+      }
+    );
+  }
+
+
+
+  posSettingsSet() {
+    this.allSettings?.forEach((data) => {
+      this.posSettings[data.keyword] = data.settingsValue;
+    });
  
+  }
 }

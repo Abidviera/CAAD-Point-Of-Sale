@@ -6,77 +6,59 @@
 
         <div class="d-flex">
           <button class="add-item-btn">
-            <span class="plus-icon"
-              ><i class="bi bi-plus-lg"></i
-            ></span>
+            <span class="plus-icon"><i class="bi bi-plus-lg"></i></span>
             Add Item
           </button>
 
           <div class="group">
             <i class="bi bi-search icon"></i>
-            <input
-              class="input"
-              type="search"
-              placeholder="Search"
-            />
+            <input class="input" type="search" placeholder="Search" />
           </div>
         </div>
       </div>
 
-      <div class="product-card" *ngFor="let product of products; let i = index">
-     
+      <div
+        class="product-card"
+        *ngFor="let product of products; let i = index"
+        (click)="onProductClick(product)"
+      >
         <img
-        [src]="(product.images && product.images[0]?.secureUrl) || 'PointOfSale/POSButtons/add-image.png'"
-        [alt]="product.productName || 'Product image'"
-        class="product-image"
-      />
+          [src]="(product.images?.[0]?.secureUrl) || 'PointOfSale/POSButtons/add-image.png'"
+          [alt]="product.productName || 'Product image'"
+          class="product-image"
+        />
         <div class="product-info">
           <font class="product-name">{{ product.productName }}</font>
           <font class="product-Code">{{ product.productCode }} <br /></font>
-          <font class="product-price">  {{ (product.retailPrice ?? 0) | number:'1.2-2' }} 
-            {{ currentLoggedCompany?.currencySymbol }}</font>
+          <font class="product-price">
+            {{ product.retailPrice | number : "1.2-2" }}
+            {{ currentLoggedCompany?.currencySymbol }}</font
+          >
         </div>
       </div>
-      
 
-      <div *ngIf="!products || products.length === 0" class="empty-products-container">
+      <div
+        *ngIf="!products || products.length === 0"
+        class="empty-products-container"
+      >
         <div class="empty-products-content">
           <i class="bi bi-box-seam empty-icon"></i>
           <h3 class="empty-title">Your Product Shelf is Empty</h3>
-          <p class="empty-message">Add items to your inventory to get started with sales</p>
+          <p class="empty-message">
+            Add items to your inventory to get started with sales
+          </p>
           <div class="action-hint">
             <i class="bi bi-arrow-up-right hint-arrow"></i>
             <span>Click "<strong>Add Item</strong>" to add new products</span>
           </div>
         </div>
       </div>
-
-       
-      <!-- <div *ngIf="!products || products.length === 0" class="empty-products-container">
-        <div class="empty-products-content">
-          <i class="bi bi-box empty-icon"></i>
-          <h3 class="empty-title">No Products Found</h3>
-          <p class="empty-message">Your product catalog appears to be empty</p>
-          <button class="add-product-btn">
-            <span class="plus-icon"><i class="bi bi-plus-lg"></i></span>
-            Add Your New Product
-          </button>
-        </div>
-      </div> -->
-    
-      
     </div>
   </div>
-    <button
-      class="nav-button ProductTop"
-      (click)="scrollProducts(-400)"
-    >
-      <i class="bi bi-chevron-up"></i>
-    </button>
-    <button
-      class="nav-button ProductDown"
-      (click)="scrollProducts(400)"
-    >
-      <i class="bi bi-chevron-down"></i>
-    </button>
-  </div>
+  <button class="nav-button ProductTop" (click)="scrollProducts(-400)">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+  <button class="nav-button ProductDown" (click)="scrollProducts(400)">
+    <i class="bi bi-chevron-down"></i>
+  </button>
+</div>

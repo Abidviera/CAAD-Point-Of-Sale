@@ -31,7 +31,7 @@
 
    
 
-      <div class="child-categorysection" *ngIf="(subCategories?.childrens?.length ?? 0) > 0 && allowSubCategory">
+      <div class="child-categorysection" *ngIf="(subCategories?.childrens?.length ?? 0) > 0 && posSettings['allowsubcategory']">
         <div class="child-category-container">
           <div class="CategoryWithChild">
             <div *ngFor="let child of subCategories?.childrens">

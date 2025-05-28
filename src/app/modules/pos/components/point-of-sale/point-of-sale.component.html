@@ -5,10 +5,11 @@
       <div class="secondNav"></div>
       <div class="parent-category">
         <div class="WEBPOS">
-          <app-category 
-        (categorySelected)="onCategorySelected($event)"
-        (productsRequested)="onProductsRequested($event)">
-      </app-category>
+          <app-category
+            (categorySelected)="onCategorySelected($event)"
+            (productsRequested)="onProductsRequested($event)"
+          >
+          </app-category>
 
           <div
             class="row g-2 Content-Section"
@@ -23,11 +24,11 @@
                 'col-md-5': !withoutCustandPro
               }"
             >
- 
+              <app-customer-info></app-customer-info>
 
-            <app-customer-info></app-customer-info>
-
-              <app-products-grid></app-products-grid>
+              <app-products-grid
+                [products]="productsTosale"
+              ></app-products-grid>
 
               <app-pos-payment-method-buttons></app-pos-payment-method-buttons>
             </div>
@@ -39,9 +40,8 @@
                 'col-md-2': !withoutCustandPro
               }"
             >
-          
-                <app-pos-order-type-buttons></app-pos-order-type-buttons>
-         
+              <app-pos-order-type-buttons></app-pos-order-type-buttons>
+
               <div
                 class="action-containerTheme2"
                 [ngClass]="{
@@ -64,7 +64,10 @@
                 '': !withoutCustandPro
               }"
             >
-              <app-products [categoryIds]="currentCategoryIds"></app-products>
+              <app-products
+                [categoryIds]="currentCategoryIds"
+                (productClicked)="handleProductClick($event)"
+              ></app-products>
             </div>
           </div>
         </div>

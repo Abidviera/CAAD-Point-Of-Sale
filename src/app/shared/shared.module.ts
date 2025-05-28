@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ServicePriceSettingPopupComponent } from './modals/service-price-setting-popup/service-price-setting-popup.component';
 
 
 
@@ -8,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 @NgModule({
   declarations: [
     NavbarComponent,
+    ServicePriceSettingPopupComponent,
   
   ],
   imports: [
@@ -15,6 +17,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   ],
   exports: [
     NavbarComponent,
+    ServicePriceSettingPopupComponent,
    
   ]
 })
