@@ -1,8 +1,8 @@
 export class CategoryNode {
-    categoryName?: string;
-    categoryId: any;
-    childrens?: CategoryNode[];
-    categoryImage?: string;
-    parent: any;
-    expanded?: boolean;
-  }
+  categoryName: string;
+  categoryImage: string;
+  categoryId: any;
+  childrens: CategoryNode[];
+  parent: any;
+  expanded?: boolean;
+}

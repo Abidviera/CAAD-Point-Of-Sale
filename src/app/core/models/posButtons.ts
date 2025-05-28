@@ -1,11 +1,10 @@
-import { PosOrderActionButtonsType } from "../../shared/enums/PosOrderActionButtonsType.enum";
+import { PosButtonType } from "../../shared/enums/posButtonType.enum";
 
-export class PosOrderActionButton {
-    _id: any;
-    company: any;
-    isActive?: boolean ;
-    displayText?: string;
-    type?: PosOrderActionButtonsType;
-    sortOrder?: number;
-  }
-  
+export class PosButton {
+  _id: any;
+  company: any;
+  isActive: boolean;
+  displayText: string;
+  type: PosButtonType;
+  sortOrder: number;
+}
