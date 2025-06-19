@@ -71,16 +71,16 @@
               <img src="PointOfSale/navbar/homes.png" alt="Home Icon" class="home-icon"  />
               <p class="home-text">HOME</p>
             </div>
-            <div class="navActionButons" *ngIf="!isFullScreen" (click)="openFullscreen()">
+            <div class="navActionButons" *ngIf="!isFullScreen" (click)="openFullscreen.emit()">
               <img src="PointOfSale/navbar/Maximize alt (2).png" alt="Home Icon" class="home-icon" />
               <p class="home-text">MAXIMIZE</p>
             </div>
-            <div class="navActionButons" *ngIf="isFullScreen" (click)="closeFullscreen()">
+            <div class="navActionButons" *ngIf="isFullScreen" (click)="closeFullscreen.emit()">
               <img src="PointOfSale/navbar/Duplicate.png" alt="Home Icon" class="home-icon" />
               <p class="home-text">MINIMIZE</p>
             </div>
 
-            <div class="navActionButons">
+            <div class="navActionButons" (click)="logout()">
               <img src="PointOfSale/navbar/shutdown-icon-main.png" alt="Home Icon" class="home-icon"  />
               <p class="home-text" >LOGOUT</p>
             </div>
