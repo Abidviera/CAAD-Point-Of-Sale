@@ -1,6 +1,8 @@
 <div class="POS" [ngClass]="selectedTheme">
   <div #fullscreenElement class="PointOfSale">
-    <app-navbar></app-navbar>
+    <app-navbar  [isFullScreen]="isFullScreen"
+  (openFullscreen)="openFullscreen()"
+  (closeFullscreen)="closeFullscreen()"></app-navbar>
     <div class="secondSection">
       <div class="secondNav"></div>
       <div class="parent-category">

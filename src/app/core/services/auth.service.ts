@@ -88,7 +88,7 @@ export class AuthService {
       localStorage.setItem('savedLogin', savedLogin);
     }
 
-    this.router.navigate(['/auth/signin']);
+    this.router.navigate(['/signin']);
 
     if (this.tokenExpirationTimer) {
       clearTimeout(this.tokenExpirationTimer);

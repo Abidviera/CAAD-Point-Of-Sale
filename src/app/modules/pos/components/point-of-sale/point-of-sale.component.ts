@@ -1029,4 +1029,7 @@ export class PointOfSaleComponent {
   handleProductClick(product: any) {
     this.addproductTosales(product);
   }
+
+
+  
 }
